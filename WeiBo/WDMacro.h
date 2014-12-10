@@ -19,6 +19,8 @@
 #define MyLog(...)
 #endif
 
+#define kDockHeight 44
+
 // SAOAuthController:OAuth认证
 #define kOAuthURL [kBaseURL stringByAppendingString:@"oauth2/authorize"]    // 新浪OAuth认证URL
 #define kAppKey             @"660705995"                                    // 开发者帐号AppKey
