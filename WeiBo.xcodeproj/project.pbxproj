@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01BA2335D7326BC93CA66D68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B1AF617EC08D909277515E /* libPods.a */; };
+		9A4ACEB91A381DB200658001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEB81A381DB200658001 /* main.m */; };
+		9A4ACEBC1A381DB200658001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEBB1A381DB200658001 /* AppDelegate.m */; };
+		9A4ACEC41A381DB200658001 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4ACEC31A381DB200658001 /* Images.xcassets */; };
+		9A4ACEC71A381DB200658001 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4ACEC51A381DB200658001 /* LaunchScreen.xib */; };
+		9A4ACED31A381DB200658001 /* WeiBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACED21A381DB200658001 /* WeiBoTests.m */; };
+		9A4ACEDE1A381E1800658001 /* WDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEDD1A381E1800658001 /* WDHomeController.m */; };
+		9A4ACEE11A38252100658001 /* WDOAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEE01A38252100658001 /* WDOAuthController.m */; };
+		9A4ACEE51A383D2100658001 /* WDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEE41A383D2100658001 /* WDAccount.m */; };
+		9A4ACEE81A38415C00658001 /* WDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEE71A38415C00658001 /* WDHttpTool.m */; };
+		9A4ACEEB1A38442300658001 /* WDAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEEA1A38442300658001 /* WDAccountTool.m */; };
+		9A4ACEEE1A384E6E00658001 /* WDMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEED1A384E6E00658001 /* WDMessageController.m */; };
+		9A4ACEF11A384E7F00658001 /* WDAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEF01A384E7F00658001 /* WDAddController.m */; };
+		9A4ACEF41A384E9000658001 /* WDDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEF31A384E9000658001 /* WDDiscoverController.m */; };
+		9A4ACEF71A384EA200658001 /* WDProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEF61A384EA200658001 /* WDProfileController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A4ACECD1A381DB200658001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A4ACEAB1A381DB200658001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A4ACEB21A381DB200658001;
+			remoteInfo = WeiBo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18B1AF617EC08D909277515E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4ACEB31A381DB200658001 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4ACEB71A381DB200658001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4ACEB81A381DB200658001 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9A4ACEBA1A381DB200658001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9A4ACEBB1A381DB200658001 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9A4ACEC31A381DB200658001 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9A4ACEC61A381DB200658001 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9A4ACECC1A381DB200658001 /* WeiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4ACED11A381DB200658001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4ACED21A381DB200658001 /* WeiBoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiBoTests.m; sourceTree = "<group>"; };
+		9A4ACEDC1A381E1800658001 /* WDHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHomeController.h; sourceTree = "<group>"; };
+		9A4ACEDD1A381E1800658001 /* WDHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHomeController.m; sourceTree = "<group>"; };
+		9A4ACEDF1A38252100658001 /* WDOAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDOAuthController.h; sourceTree = "<group>"; };
+		9A4ACEE01A38252100658001 /* WDOAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDOAuthController.m; sourceTree = "<group>"; };
+		9A4ACEE21A38270B00658001 /* WDMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMacro.h; sourceTree = "<group>"; };
+		9A4ACEE31A383D2100658001 /* WDAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAccount.h; sourceTree = "<group>"; };
+		9A4ACEE41A383D2100658001 /* WDAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAccount.m; sourceTree = "<group>"; };
+		9A4ACEE61A38415C00658001 /* WDHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHttpTool.h; sourceTree = "<group>"; };
+		9A4ACEE71A38415C00658001 /* WDHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHttpTool.m; sourceTree = "<group>"; };
+		9A4ACEE91A38442300658001 /* WDAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAccountTool.h; sourceTree = "<group>"; };
+		9A4ACEEA1A38442300658001 /* WDAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAccountTool.m; sourceTree = "<group>"; };
+		9A4ACEEC1A384E6E00658001 /* WDMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMessageController.h; sourceTree = "<group>"; };
+		9A4ACEED1A384E6E00658001 /* WDMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMessageController.m; sourceTree = "<group>"; };
+		9A4ACEEF1A384E7F00658001 /* WDAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAddController.h; sourceTree = "<group>"; };
+		9A4ACEF01A384E7F00658001 /* WDAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAddController.m; sourceTree = "<group>"; };
+		9A4ACEF21A384E9000658001 /* WDDiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDDiscoverController.h; sourceTree = "<group>"; };
+		9A4ACEF31A384E9000658001 /* WDDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDDiscoverController.m; sourceTree = "<group>"; };
+		9A4ACEF51A384EA200658001 /* WDProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDProfileController.h; sourceTree = "<group>"; };
+		9A4ACEF61A384EA200658001 /* WDProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDProfileController.m; sourceTree = "<group>"; };
+		AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A4ACEB01A381DB200658001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01BA2335D7326BC93CA66D68 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4ACEC91A381DB200658001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A4ACEAA1A381DB200658001 = {
+			isa = PBXGroup;
+			children = (
+				9A4ACEB51A381DB200658001 /* WeiBo */,
+				9A4ACECF1A381DB200658001 /* WeiBoTests */,
+				9A4ACEB41A381DB200658001 /* Products */,
+				E6CA8CDD06B4A7247ED16BF0 /* Pods */,
+				FB430C5BFEDE2A7D7841B83D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A4ACEB41A381DB200658001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A4ACEB31A381DB200658001 /* WeiBo.app */,
+				9A4ACECC1A381DB200658001 /* WeiBoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A4ACEB51A381DB200658001 /* WeiBo */ = {
+			isa = PBXGroup;
+			children = (
+				9A4ACEE21A38270B00658001 /* WDMacro.h */,
+				9A4ACEBA1A381DB200658001 /* AppDelegate.h */,
+				9A4ACEBB1A381DB200658001 /* AppDelegate.m */,
+				9A4ACEDC1A381E1800658001 /* WDHomeController.h */,
+				9A4ACEDD1A381E1800658001 /* WDHomeController.m */,
+				9A4ACEDF1A38252100658001 /* WDOAuthController.h */,
+				9A4ACEE01A38252100658001 /* WDOAuthController.m */,
+				9A4ACEC31A381DB200658001 /* Images.xcassets */,
+				9A4ACEC51A381DB200658001 /* LaunchScreen.xib */,
+				9A4ACEB61A381DB200658001 /* Supporting Files */,
+				9A4ACEE31A383D2100658001 /* WDAccount.h */,
+				9A4ACEE41A383D2100658001 /* WDAccount.m */,
+				9A4ACEE61A38415C00658001 /* WDHttpTool.h */,
+				9A4ACEE71A38415C00658001 /* WDHttpTool.m */,
+				9A4ACEE91A38442300658001 /* WDAccountTool.h */,
+				9A4ACEEA1A38442300658001 /* WDAccountTool.m */,
+				9A4ACEEC1A384E6E00658001 /* WDMessageController.h */,
+				9A4ACEED1A384E6E00658001 /* WDMessageController.m */,
+				9A4ACEEF1A384E7F00658001 /* WDAddController.h */,
+				9A4ACEF01A384E7F00658001 /* WDAddController.m */,
+				9A4ACEF21A384E9000658001 /* WDDiscoverController.h */,
+				9A4ACEF31A384E9000658001 /* WDDiscoverController.m */,
+				9A4ACEF51A384EA200658001 /* WDProfileController.h */,
+				9A4ACEF61A384EA200658001 /* WDProfileController.m */,
+			);
+			path = WeiBo;
+			sourceTree = "<group>";
+		};
+		9A4ACEB61A381DB200658001 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A4ACEB71A381DB200658001 /* Info.plist */,
+				9A4ACEB81A381DB200658001 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A4ACECF1A381DB200658001 /* WeiBoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A4ACED21A381DB200658001 /* WeiBoTests.m */,
+				9A4ACED01A381DB200658001 /* Supporting Files */,
+			);
+			path = WeiBoTests;
+			sourceTree = "<group>";
+		};
+		9A4ACED01A381DB200658001 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A4ACED11A381DB200658001 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6CA8CDD06B4A7247ED16BF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */,
+				D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB430C5BFEDE2A7D7841B83D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18B1AF617EC08D909277515E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A4ACEB21A381DB200658001 /* WeiBo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A4ACED61A381DB200658001 /* Build configuration list for PBXNativeTarget "WeiBo" */;
+			buildPhases = (
+				FA09C4CE50881F398E2E9208 /* Check Pods Manifest.lock */,
+				9A4ACEAF1A381DB200658001 /* Sources */,
+				9A4ACEB01A381DB200658001 /* Frameworks */,
+				9A4ACEB11A381DB200658001 /* Resources */,
+				A395E8AA77BA5C7D43450BE2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeiBo;
+			productName = WeiBo;
+			productReference = 9A4ACEB31A381DB200658001 /* WeiBo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A4ACECB1A381DB200658001 /* WeiBoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A4ACED91A381DB200658001 /* Build configuration list for PBXNativeTarget "WeiBoTests" */;
+			buildPhases = (
+				9A4ACEC81A381DB200658001 /* Sources */,
+				9A4ACEC91A381DB200658001 /* Frameworks */,
+				9A4ACECA1A381DB200658001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A4ACECE1A381DB200658001 /* PBXTargetDependency */,
+			);
+			name = WeiBoTests;
+			productName = WeiBoTests;
+			productReference = 9A4ACECC1A381DB200658001 /* WeiBoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A4ACEAB1A381DB200658001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = wind;
+				TargetAttributes = {
+					9A4ACEB21A381DB200658001 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					9A4ACECB1A381DB200658001 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 9A4ACEB21A381DB200658001;
+					};
+				};
+			};
+			buildConfigurationList = 9A4ACEAE1A381DB200658001 /* Build configuration list for PBXProject "WeiBo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A4ACEAA1A381DB200658001;
+			productRefGroup = 9A4ACEB41A381DB200658001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A4ACEB21A381DB200658001 /* WeiBo */,
+				9A4ACECB1A381DB200658001 /* WeiBoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A4ACEB11A381DB200658001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4ACEC71A381DB200658001 /* LaunchScreen.xib in Resources */,
+				9A4ACEC41A381DB200658001 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4ACECA1A381DB200658001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A395E8AA77BA5C7D43450BE2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA09C4CE50881F398E2E9208 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A4ACEAF1A381DB200658001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4ACEBC1A381DB200658001 /* AppDelegate.m in Sources */,
+				9A4ACEDE1A381E1800658001 /* WDHomeController.m in Sources */,
+				9A4ACEF11A384E7F00658001 /* WDAddController.m in Sources */,
+				9A4ACEE11A38252100658001 /* WDOAuthController.m in Sources */,
+				9A4ACEE51A383D2100658001 /* WDAccount.m in Sources */,
+				9A4ACEEE1A384E6E00658001 /* WDMessageController.m in Sources */,
+				9A4ACEEB1A38442300658001 /* WDAccountTool.m in Sources */,
+				9A4ACEF41A384E9000658001 /* WDDiscoverController.m in Sources */,
+				9A4ACEE81A38415C00658001 /* WDHttpTool.m in Sources */,
+				9A4ACEF71A384EA200658001 /* WDProfileController.m in Sources */,
+				9A4ACEB91A381DB200658001 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4ACEC81A381DB200658001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4ACED31A381DB200658001 /* WeiBoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A4ACECE1A381DB200658001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A4ACEB21A381DB200658001 /* WeiBo */;
+			targetProxy = 9A4ACECD1A381DB200658001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A4ACEC51A381DB200658001 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A4ACEC61A381DB200658001 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A4ACED41A381DB200658001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A4ACED51A381DB200658001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A4ACED71A381DB200658001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/DACircularProgress\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/HPGrowingTextView\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/PSTCollectionView\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
+				INFOPLIST_FILE = WeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		9A4ACED81A381DB200658001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/DACircularProgress\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/HPGrowingTextView\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/PSTCollectionView\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
+				INFOPLIST_FILE = WeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		9A4ACEDA1A381DB200658001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WeiBoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo.app/WeiBo";
+			};
+			name = Debug;
+		};
+		9A4ACEDB1A381DB200658001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WeiBoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo.app/WeiBo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A4ACEAE1A381DB200658001 /* Build configuration list for PBXProject "WeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4ACED41A381DB200658001 /* Debug */,
+				9A4ACED51A381DB200658001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A4ACED61A381DB200658001 /* Build configuration list for PBXNativeTarget "WeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4ACED71A381DB200658001 /* Debug */,
+				9A4ACED81A381DB200658001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A4ACED91A381DB200658001 /* Build configuration list for PBXNativeTarget "WeiBoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4ACEDA1A381DB200658001 /* Debug */,
+				9A4ACEDB1A381DB200658001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A4ACEAB1A381DB200658001 /* Project object */;
+}
