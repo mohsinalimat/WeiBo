@@ -12,15 +12,25 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor whiteColor];
+    if (self = [super initWithFrame:frame])
+    {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbar_background"]];
     }
     return self;
 }
 
 - (void)addItemWithIcon:(NSString *)iconName selectedIcon:(NSString *)selected title:(NSString *)title
 {
-    WDDockItem *item = [[WDDockItem alloc] init];
+    WDDockItem *item = nil;
+    if (title == nil)
+    {
+      item = [WDDockItem dockItemWithType:DockItemTypeNoTitle];
+      [item addOtherImage:@"tabbar_compose_icon_add"];
+    }
+    else
+    {
+      item = [[WDDockItem alloc] init];
+    }
     [self addSubview:item];
     
     [item setTitle:title forState:UIControlStateNormal];

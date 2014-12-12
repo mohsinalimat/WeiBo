@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, DockItemType)
+{
+  DockItemTypeNormal  = 0x001,
+  DockItemTypeNoTitle = 0x002,
+};
+
 @interface WDDockItem : UIButton
+
++ (WDDockItem *)dockItemWithType:(DockItemType)type;
+
+- (void)addOtherImage:(NSString *)icon;
 
 @end

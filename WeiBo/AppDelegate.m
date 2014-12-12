@@ -59,11 +59,11 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   if ([WDAccountTool sharedAccountTool].account)
   {
-    self.window.rootViewController = [[WDOAuthController alloc] init];
+    self.window.rootViewController = [[MainController alloc] init];
   }
   else
   {
-      self.window.rootViewController = [[MainController alloc] init];
+      self.window.rootViewController = [[WDOAuthController alloc] init];
   }
   [self.window makeKeyAndVisible];
   return YES;

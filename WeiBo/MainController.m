@@ -59,16 +59,31 @@
 {
     [self.dock addItemWithIcon:@"tabbar_home.png" selectedIcon:@"tabbar_home_selected.png" title:@"首页"];
     [self.dock addItemWithIcon:@"tabbar_message_center.png" selectedIcon:@"tabbar_message_center_selected.png" title:@"消息"];
-    [self.dock addItemWithIcon:@"tabbar_compose_button.png" selectedIcon:@"tabbar_compose_button_highlighted.png" title:@"我"];
+    [self.dock addItemWithIcon:@"tabbar_compose_button.png" selectedIcon:@"tabbar_compose_button_highlighted.png" title:nil];
     [self.dock addItemWithIcon:@"tabbar_discover.png" selectedIcon:@"tabbar_discover_selected.png" title:@"发现"];
     [self.dock addItemWithIcon:@"tabbar_profile.png" selectedIcon:@"tabbar_profile_selected.png" title:@"我"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)clickWithDockButtonIndex:(NSUInteger)index
+{
+  if (index == 0)
+  {
+    WDHomeController *homeController = [[[self.childViewControllers firstObject] childViewControllers] firstObject];
+    [homeController refresh];
+  }
 }
 
-
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+  UIViewController *rootViewController = [navigationController.viewControllers firstObject];
+  if (viewController != rootViewController)
+  {
+    CGRect naConViewFrame = navigationController.view.frame;
+    CGFloat naConY = navigationController.navigationBar.frame.origin.y;
+    CGFloat appHeight = [UIScreen mainScreen].applicationFrame.size.height;
+    naConViewFrame.size.height = appHeight + naConY;
+    navigationController.view.frame = naConViewFrame;
+  }
+}
 
 @end

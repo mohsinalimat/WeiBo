@@ -7,32 +7,153 @@
 //
 
 #import "WDHomeController.h"
+#import "UIBarButtonItem+WD.h"
+#import "WDMacro.h"
+#import "MJRefresh.h"
+#import "WDHomeStatusCellFrame.h"
+#import "WDStatusTool.h"
 
-@interface WDHomeController ()
+@interface WDHomeController ()<MJRefreshBaseViewDelegate>
+{
+  MJRefreshBaseView *_head;
+  NSMutableArray    *_statusFrameArray;
+}
 
 @end
 
 @implementation WDHomeController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-  self.view.backgroundColor = [UIColor grayColor];
-    // Do any additional setup after loading the view.
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  
+  self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+  _statusFrameArray = [[NSMutableArray alloc] init];
+  
+  self.view.backgroundColor = kBGColor;
+  self.title = @"首页";
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImageName:@"navigationbar_friendsearch" highLightImageName:@"navigationbar_friendsearch_highlighted" addTarget:self action:@selector(leftButtonClick) forContolEvents:UIControlEventTouchUpInside];
+  self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" highLightImageName:@"navigationbar_pop_highlighted" addTarget:self action:@selector(rightButtonClick)];
+  
+  MJRefreshHeaderView *head = [MJRefreshHeaderView header];
+  head.scrollView = self.tableView;
+  head.delegate = self;
+  _head = head;
+  
+  MJRefreshFooterView *foot = [MJRefreshFooterView footer];
+  foot.scrollView = self.tableView;
+  foot.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)rightButtonClick
+{
+  
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)leftButtonClick
+{
+  
 }
-*/
+
+- (void)refresh
+{
+  [_head beginRefreshing];
+}
+
+- (void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView
+{
+  if ([refreshView isKindOfClass:[MJRefreshHeaderView class]])
+  {
+    [self loadNewStatus:refreshView];
+  }
+  else
+  {
+    [self loadMoreStatus:refreshView];
+  }
+}
+
+- (void)loadNewStatus:(MJRefreshBaseView *)refreshView
+{
+  WDHomeStatusCellFrame *tempStatus = [_statusFrameArray firstObject];
+  long long firstStatusID = tempStatus.dataModel.ID;
+  
+  [WDStatusTool statusToolGetStatusWithSinceID:firstStatusID
+                                         maxID:0
+                                        Sucess:^(NSArray *array) {
+                                          NSArray *newFrame = [self statusFrameFromStatusArray:array];
+                                          [_statusFrameArray insertObjects:newFrame atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newFrame.count)]];
+                                          [self.tableView reloadData];
+                                          [refreshView endRefreshing];
+                                          
+                                          [self showNewStatusMessage:newFrame.count];
+                                        } failure:^(NSError *error) {
+                                          
+                                        }];
+}
+
+- (void)showNewStatusMessage:(NSInteger)count
+{
+  if (count)
+  {
+    UIButton *msgButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    msgButton.enabled = NO;
+    msgButton.adjustsImageWhenDisabled = NO;
+    NSString *title = [NSString stringWithFormat:@"%d 条微博", count];
+    msgButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [msgButton setTitle:title forState:UIControlStateNormal];
+    [msgButton setBackgroundImage:[UIImage imageNamed:@"timeline_new_status_background"] forState:UIControlStateNormal];
+    [self.navigationController.view insertSubview:msgButton belowSubview:self.navigationController.navigationBar];
+    
+    CGFloat height = 44;
+    CGFloat y = self.navigationController.navigationBar.frame.origin.y;
+    msgButton.frame = CGRectMake(0, y, self.view.frame.size.width, height);
+    msgButton.alpha = 1.0;
+    
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                       
+                       msgButton.alpha = 0.9;
+                       msgButton.transform = CGAffineTransformTranslate(msgButton.transform, 0, height);
+                       
+                     }
+                     completion:^(BOOL finished) {
+                       
+                       [msgButton removeFromSuperview];
+                       
+                     }];
+  }
+}
+
+- (NSArray *)statusFrameFromStatusArray:(NSArray *)statusArray
+{
+  NSMutableArray *statusFrameArray = [NSMutableArray array];
+  for(WDStatus *status in statusArray)
+  {
+    WDHomeStatusCellFrame *statusCellFrame = [[WDHomeStatusCellFrame alloc] init];
+    statusCellFrame.dataModel = status;
+    [statusFrameArray addObject:statusCellFrame];
+  }
+  return statusFrameArray;
+}
+
+- (void)loadMoreStatus:(MJRefreshBaseView *)refreshView
+{
+  
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+  return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return _statusFrameArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return 1.0;
+}
 
 @end

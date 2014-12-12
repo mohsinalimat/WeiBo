@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WDHomeController : UIViewController
+@interface WDHomeController : UITableViewController
+
+- (void)refresh;
 
 @end

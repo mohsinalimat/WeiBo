@@ -29,7 +29,7 @@
   {
     case HttpMethodGet:
     {
-      [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+      [manager GET:url parameters:paramsDict success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(error);
