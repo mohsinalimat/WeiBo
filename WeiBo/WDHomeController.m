@@ -98,7 +98,7 @@
     UIButton *msgButton = [UIButton buttonWithType:UIButtonTypeCustom];
     msgButton.enabled = NO;
     msgButton.adjustsImageWhenDisabled = NO;
-    NSString *title = [NSString stringWithFormat:@"%d 条微博", count];
+    NSString *title = [NSString stringWithFormat:@"%ld 条微博", count];
     msgButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [msgButton setTitle:title forState:UIControlStateNormal];
     [msgButton setBackgroundImage:[UIImage imageNamed:@"timeline_new_status_background"] forState:UIControlStateNormal];
@@ -153,7 +153,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return 1.0;
+    return [_statusFrameArray[indexPath.row] cellHeight];
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
 }
 
 @end

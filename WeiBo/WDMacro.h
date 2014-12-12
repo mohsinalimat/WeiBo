@@ -21,6 +21,8 @@
 
 #define kDockHeight 44
 
+#define isIPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
+
 // SAOAuthController:OAuth认证
 #define kOAuthURL [kBaseURL stringByAppendingString:@"oauth2/authorize"]    // 新浪OAuth认证URL
 #define kAppKey             @"660705995"                                    // 开发者帐号AppKey
@@ -36,6 +38,9 @@
 #define kColor(r, g, b)     [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 #define kBGColor            kColor(239, 239, 244)                           // 全局背景颜色
 
+#define kMBScreenNameColor  kColor(240, 100, 20)                            // 会员用户昵称颜色
+#define kScreenNameColor    kColor(0, 0, 0)                                 // 普通用户昵称颜色
+#define kTimeColor          kColor(200, 100, 30)                            // 微博发表时间显示颜色
 #define kScreenNameFount    [UIFont systemFontOfSize:15]                    // 用户昵称字号
 #define kReScreenNameFont   [UIFont systemFontOfSize:14]                    // 转发微博体昵称字号
 #define kTimeFont           [UIFont systemFontOfSize:10]                    // 发表时间字号

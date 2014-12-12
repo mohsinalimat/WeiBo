@@ -43,6 +43,10 @@
 		9A5041AA1A388AD200F4CE48 /* WDDockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041A91A388AD200F4CE48 /* WDDockController.m */; };
 		9A5041AD1A388ADF00F4CE48 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AC1A388ADF00F4CE48 /* MainController.m */; };
 		9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AF1A38923300F4CE48 /* WDNavigationController.m */; };
+		9A77A4DE1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4DD1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m */; };
+		9A77A4E11A3B386300EA2035 /* WDBaseStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E01A3B386300EA2035 /* WDBaseStatusCell.m */; };
+		9A77A4E41A3B392600EA2035 /* UIImage+WD568h.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */; };
+		9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E61A3B39F600EA2035 /* NSString+WD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +132,14 @@
 		9A5041AC1A388ADF00F4CE48 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		9A5041AE1A38923300F4CE48 /* WDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDNavigationController.h; sourceTree = "<group>"; };
 		9A5041AF1A38923300F4CE48 /* WDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNavigationController.m; sourceTree = "<group>"; };
+		9A77A4DC1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseTextCellTableViewCell.h; sourceTree = "<group>"; };
+		9A77A4DD1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseTextCellTableViewCell.m; sourceTree = "<group>"; };
+		9A77A4DF1A3B386300EA2035 /* WDBaseStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseStatusCell.h; sourceTree = "<group>"; };
+		9A77A4E01A3B386300EA2035 /* WDBaseStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseStatusCell.m; sourceTree = "<group>"; };
+		9A77A4E21A3B392600EA2035 /* UIImage+WD568h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WD568h.h"; sourceTree = "<group>"; };
+		9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WD568h.m"; sourceTree = "<group>"; };
+		9A77A4E51A3B39F600EA2035 /* NSString+WD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WD.h"; sourceTree = "<group>"; };
+		9A77A4E61A3B39F600EA2035 /* NSString+WD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WD.m"; sourceTree = "<group>"; };
 		AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +168,10 @@
 			children = (
 				9A1B51B81A395470005D75D8 /* UIBarButtonItem+WD.h */,
 				9A1B51B91A395470005D75D8 /* UIBarButtonItem+WD.m */,
+				9A77A4E21A3B392600EA2035 /* UIImage+WD568h.h */,
+				9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */,
+				9A77A4E51A3B39F600EA2035 /* NSString+WD.h */,
+				9A77A4E61A3B39F600EA2035 /* NSString+WD.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -249,6 +265,10 @@
 				9A26825E1A3AD68800596BEB /* WDImageListView.m */,
 				9A2682601A3AD7A200596BEB /* WDImageView.h */,
 				9A2682611A3AD7A200596BEB /* WDImageView.m */,
+				9A77A4DC1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.h */,
+				9A77A4DD1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m */,
+				9A77A4DF1A3B386300EA2035 /* WDBaseStatusCell.h */,
+				9A77A4E01A3B386300EA2035 /* WDBaseStatusCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -487,6 +507,7 @@
 				9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */,
 				9A2682621A3AD7A200596BEB /* WDImageView.m in Sources */,
 				9A4ACEF11A384E7F00658001 /* WDAddController.m in Sources */,
+				9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */,
 				9A5041A41A388AA200F4CE48 /* WDDock.m in Sources */,
 				9A2682551A3AB62D00596BEB /* WDStatus.m in Sources */,
 				9A1B51CA1A3967B4005D75D8 /* MJRefreshBaseView.m in Sources */,
@@ -500,6 +521,7 @@
 				9A2682591A3AC2B800596BEB /* WDBaseTextCellFrame.m in Sources */,
 				9A1B51CC1A3967B4005D75D8 /* MJRefreshFooterView.m in Sources */,
 				9A4ACEEB1A38442300658001 /* WDAccountTool.m in Sources */,
+				9A77A4DE1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m in Sources */,
 				9A2682521A3AB60600596BEB /* WDStatusTool.m in Sources */,
 				9A4ACEF41A384E9000658001 /* WDDiscoverController.m in Sources */,
 				9A4ACEE81A38415C00658001 /* WDHttpTool.m in Sources */,
@@ -508,7 +530,9 @@
 				9A2682661A3AE96100596BEB /* WDHomeStatusCellFrame.m in Sources */,
 				9A26825F1A3AD68800596BEB /* WDImageListView.m in Sources */,
 				9A5041AD1A388ADF00F4CE48 /* MainController.m in Sources */,
+				9A77A4E41A3B392600EA2035 /* UIImage+WD568h.m in Sources */,
 				9A4ACEB91A381DB200658001 /* main.m in Sources */,
+				9A77A4E11A3B386300EA2035 /* WDBaseStatusCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
