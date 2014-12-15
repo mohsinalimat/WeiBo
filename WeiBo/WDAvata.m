@@ -39,7 +39,7 @@
 
 - (void)setType:(WDAvataType)type
 {
-  self.type = type;
+  _type = type;
   switch (type)
   {
     case kAvataTypeSmall:
@@ -73,7 +73,7 @@
 
 - (void)setUser:(WDUser *)user
 {
-  self.user = user;
+  _user = user;
   
   [WDStatusTool statusToolInsteadView:_icon setImageWithURLString:user.profileImageUrl placeholderImage:[UIImage imageNamed:@"avatar_default"]];
   

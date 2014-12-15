@@ -2,8 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "common_card_background_highlighted.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

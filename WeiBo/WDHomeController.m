@@ -12,6 +12,7 @@
 #import "MJRefresh.h"
 #import "WDHomeStatusCellFrame.h"
 #import "WDStatusTool.h"
+#import "WDHomeStatusCell.h"
 
 @interface WDHomeController ()<MJRefreshBaseViewDelegate>
 {
@@ -43,11 +44,16 @@
   MJRefreshFooterView *foot = [MJRefreshFooterView footer];
   foot.scrollView = self.tableView;
   foot.delegate = self;
+  
+//  self.tableView.backgroundColor = [UIColor greenColor];
 }
 
 - (void)rightButtonClick
 {
-  
+  for(UITableViewCell *cell in self.tableView.visibleCells)
+  {
+    NSLog(@"cell rect {%ld, %ld, %ld, %ld}", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
+  }
 }
 
 - (void)leftButtonClick
@@ -98,7 +104,7 @@
     UIButton *msgButton = [UIButton buttonWithType:UIButtonTypeCustom];
     msgButton.enabled = NO;
     msgButton.adjustsImageWhenDisabled = NO;
-    NSString *title = [NSString stringWithFormat:@"%ld 条微博", count];
+    NSString *title = [NSString stringWithFormat:@"%ld 条微博", (long)count];
     msgButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [msgButton setTitle:title forState:UIControlStateNormal];
     [msgButton setBackgroundImage:[UIImage imageNamed:@"timeline_new_status_background"] forState:UIControlStateNormal];
@@ -153,12 +159,20 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_statusFrameArray[indexPath.row] cellHeight];
+  return [_statusFrameArray[indexPath.row] cellHeight];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+  WDHomeStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:[WDHomeStatusCell ID]];
+  if (cell == nil)
+  {
+    cell = [[WDHomeStatusCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[WDHomeStatusCell ID]];
+  }
+  
+  cell.cellFrame = _statusFrameArray[indexPath.row];
+  
+  return cell;
 }
 
 @end

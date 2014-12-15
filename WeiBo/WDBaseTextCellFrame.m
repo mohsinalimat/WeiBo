@@ -7,12 +7,24 @@
 //
 
 #import "WDBaseTextCellFrame.h"
-#import "WDBaseText.h"
+#import "WDStatus.h"
 #import "WDMacro.h"
 
 @implementation WDBaseTextCellFrame
 
-- (void)setDataModel:(WDBaseText *)dataModel
+@synthesize avataRect       = _avataRect;
+@synthesize screenNameRect  = _screenNameRect;
+@synthesize mbIconRect      = _mbIconRect;
+@synthesize timeRect        = _timeRect;
+@synthesize sourceRect      = _sourceRect;
+@synthesize textRect        = _textRect;
+@synthesize cellHeight      = _cellHeight;
+@synthesize cellWidth       = _cellWidth;
+@synthesize avataType       = _avataType;
+@synthesize dataModel       = _dataModel;
+
+
+- (void)setDataModel:(WDStatus *)dataModel
 {
   _dataModel = dataModel;
   CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
@@ -26,7 +38,7 @@
   CGFloat screenNameX = CGRectGetMaxX(_avataRect) + kInterval;
   CGFloat screenNameY = avataY;
   CGSize screenNameSize = [dataModel.user.screenName sizeWithFont:kScreenNameFount];
-  _screenNameRect = CGRectMake(screenNameX, screenNameY, screenSize.width, screenSize.height);
+  _screenNameRect = CGRectMake(screenNameX, screenNameY, screenNameSize.width, screenNameSize.height);
   
   CGFloat mbIconX = CGRectGetMaxX(_screenNameRect) + kInterval;
   CGFloat mbIconY = (screenNameSize.height - kMBIconWH) * 0.5 + screenNameY;
@@ -35,9 +47,9 @@
   _cellHeight = MAX(CGRectGetHeight(_avataRect), CGRectGetHeight(_screenNameRect)) + kInterval;
 }
 
-- (void)setDataModel:(WDBaseText *)dataModel withAvataType:(WDAvataType)avataType
+- (void)setDataModel:(WDStatus *)dataModel withAvataType:(WDAvataType)avataType
 {
-  self.avataType = avataType;
+  _avataType = avataType;
   [self setDataModel:dataModel];
 }
 

@@ -76,23 +76,51 @@
 
 - (void)settingBaseStatusSubViewContent
 {
-    WDStatus *status = self.cellFrame.dataModel;
-    if (status.picUrls.count)
+  WDStatus *status = self.cellFrame.dataModel;
+  if (status.picUrls.count)
+  {
+      _image.hidden = NO;
+      _retweet.hidden = NO;
+      _image.imageList = status.picUrls;
+  }
+  else if(status.retweetedStatus)
+  {
+    _image.hidden = YES;
+    _retweet.hidden = NO;
+    _reScreenName.text = [NSString stringWithFormat:@"@%@", status.retweetedStatus.user.screenName];
+    _reText.text = status.retweetedStatus.text;
+    if (status.retweetedStatus.picUrls.count)
     {
-        _image.hidden = NO;
-        _retweet.hidden = NO;
-        _image.imageList = status.picUrls;
+      _reImage.hidden = NO;
+      _reImage.imageList = status.retweetedStatus.picUrls;
     }
+    else
+    {
+      _reImage.hidden = YES;
+    }
+  }
+  else
+  {
+    _image.hidden = YES;
+    _retweet.hidden = YES;
+  }
 }
 
 - (void)settingBaseStatusSubViewFrame
 {
-    
+  _image.frame = self.cellFrame.image;
+  _retweet.frame = self.cellFrame.retweet;
+  _reScreenName.frame = self.cellFrame.reScreenName;
+  _reText.frame = self.cellFrame.retext;
+  _reImage.frame = self.cellFrame.reImage;
 }
 
 - (void)setFrame:(CGRect)frame
 {
-    
+  frame.origin.y += kCellMargins * 2;
+  frame.size.height -= kCellMargins * 2;
+  
+  [super setFrame:frame];
 }
 
 + (NSString *)ID

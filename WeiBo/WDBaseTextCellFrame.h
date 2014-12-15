@@ -10,21 +10,23 @@
 #import <UIKit/UIKit.h>
 #import "WDAvata.h"
 
-@class WDBaseText;
+@class WDStatus;
 
 @interface WDBaseTextCellFrame : NSObject
 
-@property(nonatomic, readonly) CGRect avataRect;
-@property(nonatomic, readonly) CGRect screenNameRect;
-@property(nonatomic, readonly) CGRect mbIconRect;
-@property(nonatomic, assign)   CGRect timeRect;
-@property(nonatomic, assign)   CGRect sourceRect;
-@property(nonatomic, assign)   CGRect textRect;
-@property(nonatomic, assign)   CGFloat cellHeight;
-@property(nonatomic, assign) CGFloat cellWidth;
-@property(nonatomic, assign)   WDAvataType avataType;
-@property(nonatomic, strong)   WDBaseText *dataModel;
+@property(nonatomic, readonly) CGRect      avataRect;
+@property(nonatomic, readonly) CGRect      screenNameRect;
+@property(nonatomic, readonly) CGRect      mbIconRect;
+@property(nonatomic, assign)   CGRect      timeRect;
+@property(nonatomic, assign)   CGRect      sourceRect;
+@property(nonatomic, assign)   CGRect      textRect;
 
-- (void)setDataModel:(WDBaseText *)dataModel withAvataType:(WDAvataType)avataType;
+@property(nonatomic, assign)   CGFloat     cellHeight;
+@property(nonatomic, assign)   CGFloat     cellWidth;
+
+@property(nonatomic, assign)   WDAvataType avataType;
+@property(nonatomic, strong)   WDStatus  *dataModel;
+
+- (void)setDataModel:(WDStatus *)dataModel withAvataType:(WDAvataType)avataType;
 
 @end

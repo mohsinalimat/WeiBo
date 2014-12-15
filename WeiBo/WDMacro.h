@@ -42,15 +42,16 @@
 #define kScreenNameColor    kColor(0, 0, 0)                                 // 普通用户昵称颜色
 #define kTimeColor          kColor(200, 100, 30)                            // 微博发表时间显示颜色
 #define kScreenNameFount    [UIFont systemFontOfSize:15]                    // 用户昵称字号
-#define kReScreenNameFont   [UIFont systemFontOfSize:14]                    // 转发微博体昵称字号
+#define kReScreenNameFont   [UIFont systemFontOfSize:15]                    // 转发微博体昵称字号
 #define kTimeFont           [UIFont systemFontOfSize:10]                    // 发表时间字号
-#define kTextFount          [UIFont systemFontOfSize:15]                    // 微博正文字号
+#define kTextFount          [UIFont systemFontOfSize:17]                    // 微博正文字号
 #define kSourceFont         kTimeFont                                       // 微博来源字号
 #define kInterval 10
 #define kCellMargins        (kInterval * 0.5)                               // 单元格两边边距
 #define kMBIconWH           12                                              // 会员图标尺寸
 #define kReTextFont         kReScreenNameFont                               // 转发微博体正文字号
 
+#define kCellDefaultHeight  44                                              // TableViewCell默认高度
 #define kStatusDockHeight   35                                              // 功能菜单栏高度
 
 #endif

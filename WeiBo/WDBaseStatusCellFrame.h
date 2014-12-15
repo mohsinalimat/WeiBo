@@ -16,6 +16,5 @@
 @property(nonatomic, readonly) CGRect retext;
 @property(nonatomic, readonly) CGRect reScreenName;
 @property(nonatomic, readonly) CGRect reImage;
-@property(nonatomic, strong) WDStatus *dataModel;
 
 @end

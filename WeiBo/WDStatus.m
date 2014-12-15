@@ -10,6 +10,10 @@
 
 @implementation WDStatus
 
+@synthesize repostsCount = _repostsCount;
+@synthesize commentsCount = _commentsCount;
+@synthesize attitudesCount = _attitudesCount;
+
 - (instancetype)initWithDict:(NSDictionary *)dict
 {
   if (self = [super initWithDict:dict])

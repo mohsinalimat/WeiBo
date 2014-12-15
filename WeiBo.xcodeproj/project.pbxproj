@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		01BA2335D7326BC93CA66D68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B1AF617EC08D909277515E /* libPods.a */; };
+		9A1B51091A3E835C00D88D43 /* WDHomeStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B51081A3E835C00D88D43 /* WDHomeStatusCell.m */; };
+		9A1B510C1A3E83AB00D88D43 /* WDBaseDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B510B1A3E83AB00D88D43 /* WDBaseDock.m */; };
+		9A1B510F1A3E890300D88D43 /* WDStatusDock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B510E1A3E890300D88D43 /* WDStatusDock.m */; };
+		9A1B51121A3EC4D500D88D43 /* WDBaseTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B51111A3EC4D500D88D43 /* WDBaseTextCell.m */; };
+		9A1B51151A3ED98F00D88D43 /* WDStatusDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B51141A3ED98F00D88D43 /* WDStatusDetailController.m */; };
 		9A1B51BA1A395470005D75D8 /* UIBarButtonItem+WD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B51B91A395470005D75D8 /* UIBarButtonItem+WD.m */; };
 		9A1B51C91A3967B4005D75D8 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A1B51BF1A3967B4005D75D8 /* MJRefresh.bundle */; };
 		9A1B51CA1A3967B4005D75D8 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B51C21A3967B4005D75D8 /* MJRefreshBaseView.m */; };
@@ -43,7 +48,6 @@
 		9A5041AA1A388AD200F4CE48 /* WDDockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041A91A388AD200F4CE48 /* WDDockController.m */; };
 		9A5041AD1A388ADF00F4CE48 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AC1A388ADF00F4CE48 /* MainController.m */; };
 		9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AF1A38923300F4CE48 /* WDNavigationController.m */; };
-		9A77A4DE1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4DD1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m */; };
 		9A77A4E11A3B386300EA2035 /* WDBaseStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E01A3B386300EA2035 /* WDBaseStatusCell.m */; };
 		9A77A4E41A3B392600EA2035 /* UIImage+WD568h.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */; };
 		9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E61A3B39F600EA2035 /* NSString+WD.m */; };
@@ -61,6 +65,16 @@
 
 /* Begin PBXFileReference section */
 		18B1AF617EC08D909277515E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1B51071A3E835C00D88D43 /* WDHomeStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHomeStatusCell.h; sourceTree = "<group>"; };
+		9A1B51081A3E835C00D88D43 /* WDHomeStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHomeStatusCell.m; sourceTree = "<group>"; };
+		9A1B510A1A3E83AB00D88D43 /* WDBaseDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseDock.h; sourceTree = "<group>"; };
+		9A1B510B1A3E83AB00D88D43 /* WDBaseDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseDock.m; sourceTree = "<group>"; };
+		9A1B510D1A3E890300D88D43 /* WDStatusDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStatusDock.h; sourceTree = "<group>"; };
+		9A1B510E1A3E890300D88D43 /* WDStatusDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStatusDock.m; sourceTree = "<group>"; };
+		9A1B51101A3EC4D500D88D43 /* WDBaseTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseTextCell.h; sourceTree = "<group>"; };
+		9A1B51111A3EC4D500D88D43 /* WDBaseTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseTextCell.m; sourceTree = "<group>"; };
+		9A1B51131A3ED98F00D88D43 /* WDStatusDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStatusDetailController.h; sourceTree = "<group>"; };
+		9A1B51141A3ED98F00D88D43 /* WDStatusDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStatusDetailController.m; sourceTree = "<group>"; };
 		9A1B51B81A395470005D75D8 /* UIBarButtonItem+WD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WD.h"; sourceTree = "<group>"; };
 		9A1B51B91A395470005D75D8 /* UIBarButtonItem+WD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WD.m"; sourceTree = "<group>"; };
 		9A1B51BF1A3967B4005D75D8 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
@@ -132,8 +146,6 @@
 		9A5041AC1A388ADF00F4CE48 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		9A5041AE1A38923300F4CE48 /* WDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDNavigationController.h; sourceTree = "<group>"; };
 		9A5041AF1A38923300F4CE48 /* WDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNavigationController.m; sourceTree = "<group>"; };
-		9A77A4DC1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseTextCellTableViewCell.h; sourceTree = "<group>"; };
-		9A77A4DD1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseTextCellTableViewCell.m; sourceTree = "<group>"; };
 		9A77A4DF1A3B386300EA2035 /* WDBaseStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBaseStatusCell.h; sourceTree = "<group>"; };
 		9A77A4E01A3B386300EA2035 /* WDBaseStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBaseStatusCell.m; sourceTree = "<group>"; };
 		9A77A4E21A3B392600EA2035 /* UIImage+WD568h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WD568h.h"; sourceTree = "<group>"; };
@@ -197,6 +209,8 @@
 				9A5041AC1A388ADF00F4CE48 /* MainController.m */,
 				9A5041AE1A38923300F4CE48 /* WDNavigationController.h */,
 				9A5041AF1A38923300F4CE48 /* WDNavigationController.m */,
+				9A1B51131A3ED98F00D88D43 /* WDStatusDetailController.h */,
+				9A1B51141A3ED98F00D88D43 /* WDStatusDetailController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -265,10 +279,16 @@
 				9A26825E1A3AD68800596BEB /* WDImageListView.m */,
 				9A2682601A3AD7A200596BEB /* WDImageView.h */,
 				9A2682611A3AD7A200596BEB /* WDImageView.m */,
-				9A77A4DC1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.h */,
-				9A77A4DD1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m */,
+				9A1B51101A3EC4D500D88D43 /* WDBaseTextCell.h */,
+				9A1B51111A3EC4D500D88D43 /* WDBaseTextCell.m */,
 				9A77A4DF1A3B386300EA2035 /* WDBaseStatusCell.h */,
 				9A77A4E01A3B386300EA2035 /* WDBaseStatusCell.m */,
+				9A1B51071A3E835C00D88D43 /* WDHomeStatusCell.h */,
+				9A1B51081A3E835C00D88D43 /* WDHomeStatusCell.m */,
+				9A1B510A1A3E83AB00D88D43 /* WDBaseDock.h */,
+				9A1B510B1A3E83AB00D88D43 /* WDBaseDock.m */,
+				9A1B510D1A3E890300D88D43 /* WDStatusDock.h */,
+				9A1B510E1A3E890300D88D43 /* WDStatusDock.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -498,11 +518,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1B51121A3EC4D500D88D43 /* WDBaseTextCell.m in Sources */,
 				9A4ACEBC1A381DB200658001 /* AppDelegate.m in Sources */,
 				9A1B51BA1A395470005D75D8 /* UIBarButtonItem+WD.m in Sources */,
 				9A4ACEDE1A381E1800658001 /* WDHomeController.m in Sources */,
 				9A26825C1A3ACA9700596BEB /* WDBaseStatusCellFrame.m in Sources */,
 				9A1B51CB1A3967B4005D75D8 /* MJRefreshConst.m in Sources */,
+				9A1B510C1A3E83AB00D88D43 /* WDBaseDock.m in Sources */,
 				9A26824E1A3A9A5D00596BEB /* WDAvata.m in Sources */,
 				9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */,
 				9A2682621A3AD7A200596BEB /* WDImageView.m in Sources */,
@@ -518,15 +540,17 @@
 				9A26824B1A3A930E00596BEB /* WDUser.m in Sources */,
 				9A4ACEE51A383D2100658001 /* WDAccount.m in Sources */,
 				9A4ACEEE1A384E6E00658001 /* WDMessageController.m in Sources */,
+				9A1B51151A3ED98F00D88D43 /* WDStatusDetailController.m in Sources */,
 				9A2682591A3AC2B800596BEB /* WDBaseTextCellFrame.m in Sources */,
 				9A1B51CC1A3967B4005D75D8 /* MJRefreshFooterView.m in Sources */,
 				9A4ACEEB1A38442300658001 /* WDAccountTool.m in Sources */,
-				9A77A4DE1A3B2A4C00EA2035 /* WDBaseTextCellTableViewCell.m in Sources */,
 				9A2682521A3AB60600596BEB /* WDStatusTool.m in Sources */,
+				9A1B51091A3E835C00D88D43 /* WDHomeStatusCell.m in Sources */,
 				9A4ACEF41A384E9000658001 /* WDDiscoverController.m in Sources */,
 				9A4ACEE81A38415C00658001 /* WDHttpTool.m in Sources */,
 				9A4ACEF71A384EA200658001 /* WDProfileController.m in Sources */,
 				9A5041A71A388AB700F4CE48 /* WDDockItem.m in Sources */,
+				9A1B510F1A3E890300D88D43 /* WDStatusDock.m in Sources */,
 				9A2682661A3AE96100596BEB /* WDHomeStatusCellFrame.m in Sources */,
 				9A26825F1A3AD68800596BEB /* WDImageListView.m in Sources */,
 				9A5041AD1A388ADF00F4CE48 /* MainController.m in Sources */,

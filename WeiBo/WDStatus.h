@@ -11,9 +11,9 @@
 @interface WDStatus : WDBaseText
 
 @property(nonatomic, strong) WDStatus *retweetedStatus;
-@property(nonatomic, assign) NSInteger repostsCount;
-@property(nonatomic, assign) NSInteger commentsCount;
-@property(nonatomic, assign) NSInteger attitudesCount;
+@property(nonatomic, assign) NSUInteger repostsCount;
+@property(nonatomic, assign) NSUInteger commentsCount;
+@property(nonatomic, assign) NSUInteger attitudesCount;
 @property(nonatomic, strong) NSArray *picUrls;
 
 + (id) statusWithDict:(NSDictionary *)dict;

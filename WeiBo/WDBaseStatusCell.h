@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 wind. All rights reserved.
 //
 
-#import "WDBaseTextCellTableViewCell.h"
+#import "WDBaseTextCell.h"
 #import "WDBaseStatusCellFrame.h"
 
 @interface WDBaseStatusCell : WDBaseTextCell

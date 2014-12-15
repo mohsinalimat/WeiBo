@@ -12,6 +12,12 @@
 
 @implementation WDBaseStatusCellFrame
 
+@synthesize image         = _image;
+@synthesize retweet       = _retweet;
+@synthesize retext        = _retext;
+@synthesize reScreenName  = _reScreenName;
+@synthesize reImage       = _reImage;
+
 - (void)setDataModel:(WDStatus *)dataModel
 {
   [super setDataModel:dataModel];
@@ -51,7 +57,6 @@
     CGSize reScreenNameSize = [[NSString stringWithFormat:@"@%@", dataModel.retweetedStatus.user.screenName] sizeWithFont:kReScreenNameFont];
     _reScreenName = CGRectMake(reScreenNameX, reScreenNameY, reScreenNameSize.width, reScreenNameSize.height);
     
-    // 7、设置转发体正文尺寸位置
     CGFloat reTextX = reScreenNameX;
     CGFloat reTextY = CGRectGetMaxY(_reScreenName) + kInterval;
     CGSize reTextSize = [dataModel.retweetedStatus.text sizeWithFont:kReTextFont constrainedToSize:CGSizeMake((retweetW - 2 * kInterval), MAXFLOAT)];
@@ -85,7 +90,7 @@
   {
     // 9、设置单元格高度尺寸位置
     // 无配图，无转发体单元格高度
-    self.cellHeight = CGRectGetMaxY(super.textRect) + kInterval + kCellMargins;
+    self.cellHeight = CGRectGetMaxY(self.textRect) + kInterval + kCellMargins;
   }
 }
 
