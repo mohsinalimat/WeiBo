@@ -13,6 +13,7 @@
 #import "WDHomeStatusCellFrame.h"
 #import "WDStatusTool.h"
 #import "WDHomeStatusCell.h"
+#import "WDStatusDetailController.h"
 
 @interface WDHomeController ()<MJRefreshBaseViewDelegate>
 {
@@ -23,6 +24,22 @@
 @end
 
 @implementation WDHomeController
+
+- (instancetype)init
+{
+  if (self = [super init])
+  {
+    MJRefreshHeaderView *head = [MJRefreshHeaderView header];
+    head.scrollView = self.tableView;
+    head.delegate = self;
+    _head = head;
+    
+    MJRefreshFooterView *foot = [MJRefreshFooterView footer];
+    foot.scrollView = self.tableView;
+    foot.delegate = self;
+  }
+  return self;
+}
 
 - (void)viewDidLoad
 {
@@ -35,25 +52,11 @@
   self.title = @"首页";
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImageName:@"navigationbar_friendsearch" highLightImageName:@"navigationbar_friendsearch_highlighted" addTarget:self action:@selector(leftButtonClick) forContolEvents:UIControlEventTouchUpInside];
   self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" highLightImageName:@"navigationbar_pop_highlighted" addTarget:self action:@selector(rightButtonClick)];
-  
-  MJRefreshHeaderView *head = [MJRefreshHeaderView header];
-  head.scrollView = self.tableView;
-  head.delegate = self;
-  _head = head;
-  
-  MJRefreshFooterView *foot = [MJRefreshFooterView footer];
-  foot.scrollView = self.tableView;
-  foot.delegate = self;
-  
-//  self.tableView.backgroundColor = [UIColor greenColor];
 }
 
 - (void)rightButtonClick
 {
-  for(UITableViewCell *cell in self.tableView.visibleCells)
-  {
-    NSLog(@"cell rect {%ld, %ld, %ld, %ld}", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
-  }
+  
 }
 
 - (void)leftButtonClick
@@ -95,6 +98,28 @@
                                         } failure:^(NSError *error) {
                                           
                                         }];
+}
+
+
+- (void)loadMoreStatus:(MJRefreshBaseView *)refreshView
+{
+  WDHomeStatusCellFrame *tempStatus = [_statusFrameArray objectAtIndex:_statusFrameArray.count - 1];
+  long long lastStatusID = tempStatus.dataModel.ID;
+  
+  [WDStatusTool statusToolGetStatusWithSinceID:0
+                                         maxID:lastStatusID - 1
+                                        Sucess:^(NSArray *array) {
+                                          NSArray *newFrame = [self statusFrameFromStatusArray:array];
+                                          for(WDHomeStatusCellFrame *obj in newFrame)
+                                          {
+                                            [_statusFrameArray addObject:obj];
+                                          }
+                                          [self.tableView reloadData];
+                                          [refreshView endRefreshing];
+                                        }
+                                       failure:^(NSError *error) {
+                                         
+                                       }];
 }
 
 - (void)showNewStatusMessage:(NSInteger)count
@@ -142,11 +167,6 @@
   return statusFrameArray;
 }
 
-- (void)loadMoreStatus:(MJRefreshBaseView *)refreshView
-{
-  
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
   return 1;
@@ -173,6 +193,11 @@
   cell.cellFrame = _statusFrameArray[indexPath.row];
   
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  [self.navigationController pushViewController:[[WDStatusDetailController alloc] init] animated:YES];
 }
 
 @end

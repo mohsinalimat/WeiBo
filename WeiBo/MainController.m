@@ -20,11 +20,13 @@
 
 @implementation MainController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self addSubView];
     [self addDockItem];
+  [self clickWithDockButtonIndex:0];
 }
 
 - (void)addSubView

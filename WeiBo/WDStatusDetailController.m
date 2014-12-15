@@ -10,4 +10,10 @@
 
 @implementation WDStatusDetailController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  self.view.backgroundColor = [UIColor whiteColor];
+}
+
 @end
