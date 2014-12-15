@@ -21,7 +21,7 @@
     _repostsCount = [[dict valueForKey:@"reposts_count"] intValue];
     _commentsCount = [[dict valueForKey:@"comments_count"] intValue];
     _attitudesCount = [[dict valueForKey:@"attitudes_count"] intValue];
-    _picUrls = [dict valueForKey:@"pic_ids"];
+    _picUrls = [dict valueForKey:@"pic_urls"];
     
     NSDictionary *retweeted_status = [dict valueForKey:@"retweeted_status"];
     if (retweeted_status)
