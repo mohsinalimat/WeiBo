@@ -13,6 +13,7 @@
 #import "WDHomeStatusCellFrame.h"
 #import "WDStatusTool.h"
 #import "WDHomeStatusCell.h"
+#import "WDNickNameButton.h"
 #import "WDStatusDetailController.h"
 
 @interface WDHomeController ()<MJRefreshBaseViewDelegate>
@@ -49,9 +50,19 @@
   _statusFrameArray = [[NSMutableArray alloc] init];
   
   self.view.backgroundColor = kBGColor;
-  self.title = @"首页";
+//  self.title = @"首页";
+  
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImageName:@"navigationbar_friendsearch" highLightImageName:@"navigationbar_friendsearch_highlighted" addTarget:self action:@selector(leftButtonClick) forContolEvents:UIControlEventTouchUpInside];
   self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" highLightImageName:@"navigationbar_pop_highlighted" addTarget:self action:@selector(rightButtonClick)];
+  
+  WDNickNameButton *nickNameBtn = [[WDNickNameButton alloc] initWithNickName:@"autorelease"];
+  [nickNameBtn addTarget:self action:@selector(middleButtonClick) forControlEvents:UIControlEventTouchUpInside];
+  self.navigationItem.titleView = nickNameBtn;
+}
+
+- (void)middleButtonClick
+{
+  
 }
 
 - (void)rightButtonClick
@@ -90,7 +101,9 @@
                                          maxID:0
                                         Sucess:^(NSArray *array) {
                                           NSArray *newFrame = [self statusFrameFromStatusArray:array];
-                                          [_statusFrameArray insertObjects:newFrame atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newFrame.count)]];
+                                          [_statusFrameArray removeAllObjects];
+                                          [_statusFrameArray addObjectsFromArray:newFrame];
+//                                          [_statusFrameArray insertObjects:newFrame atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newFrame.count)]];
                                           [self.tableView reloadData];
                                           [refreshView endRefreshing];
                                           
@@ -109,6 +122,7 @@
   [WDStatusTool statusToolGetStatusWithSinceID:0
                                          maxID:lastStatusID - 1
                                         Sucess:^(NSArray *array) {
+                                          
                                           NSArray *newFrame = [self statusFrameFromStatusArray:array];
                                           for(WDHomeStatusCellFrame *obj in newFrame)
                                           {

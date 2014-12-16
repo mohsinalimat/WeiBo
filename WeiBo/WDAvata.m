@@ -21,7 +21,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-  if (self = [super initWithFrame:frame]) {
+  if (self = [super initWithFrame:frame])
+  {
     _icon = [[UIImageView alloc] init];
     [self addSubview:_icon];
     

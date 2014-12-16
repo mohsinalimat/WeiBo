@@ -26,25 +26,25 @@
 
 - (void)setDataModel:(WDStatus *)dataModel
 {
-  _dataModel = dataModel;
+  _dataModel        = dataModel;
   CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
-  self.cellWidth = screenSize.width;
+  self.cellWidth    = screenSize.width;
   
-  CGFloat avataX = kInterval;
-  CGFloat avataY = kInterval;
-  CGSize avataSize = [WDAvata sizeOfAvataType:_avataType];
-  _avataRect = CGRectMake(avataX, avataY, avataSize.width, avataSize.height);
+  CGFloat avataX    = kInterval;
+  CGFloat avataY    = kInterval;
+  CGSize avataSize  = [WDAvata sizeOfAvataType:_avataType];
+  _avataRect        = CGRectMake(avataX, avataY, avataSize.width, avataSize.height);
   
-  CGFloat screenNameX = CGRectGetMaxX(_avataRect) + kInterval;
-  CGFloat screenNameY = avataY;
+  CGFloat screenNameX   = CGRectGetMaxX(_avataRect) + kInterval;
+  CGFloat screenNameY   = avataY;
   CGSize screenNameSize = [dataModel.user.screenName sizeWithFont:kScreenNameFount];
-  _screenNameRect = CGRectMake(screenNameX, screenNameY, screenNameSize.width, screenNameSize.height);
+  _screenNameRect       = CGRectMake(screenNameX, screenNameY, screenNameSize.width, screenNameSize.height);
   
   CGFloat mbIconX = CGRectGetMaxX(_screenNameRect) + kInterval;
   CGFloat mbIconY = (screenNameSize.height - kMBIconWH) * 0.5 + screenNameY;
-  _mbIconRect = CGRectMake(mbIconX, mbIconY, kMBIconWH, kMBIconWH);
+  _mbIconRect     = CGRectMake(mbIconX, mbIconY, kMBIconWH, kMBIconWH);
   
-  _cellHeight = MAX(CGRectGetHeight(_avataRect), CGRectGetHeight(_screenNameRect)) + kInterval;
+  _cellHeight     = MAX(CGRectGetHeight(_avataRect), CGRectGetHeight(_screenNameRect)) + kInterval;
 }
 
 - (void)setDataModel:(WDStatus *)dataModel withAvataType:(WDAvataType)avataType

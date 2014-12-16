@@ -22,40 +22,40 @@
 {
   [super setDataModel:dataModel];
   
-  CGFloat timeX = self.screenNameRect.origin.x;
-  CGFloat timeY = CGRectGetMaxY(self.screenNameRect) + kInterval * 0.5;
-  CGSize timeSize = [dataModel.createAt sizeWithFont:kTimeFont];
-  self.timeRect = CGRectMake(timeX, timeY, timeSize.width, timeSize.height);
+  CGFloat timeX     = self.screenNameRect.origin.x;
+  CGFloat timeY     = CGRectGetMaxY(self.screenNameRect) + kInterval * 0.5;
+  CGSize timeSize   = [dataModel.createAt sizeWithFont:kTimeFont];
+  self.timeRect     = CGRectMake(timeX, timeY, timeSize.width, timeSize.height);
   
-  CGFloat sourceX = CGRectGetMaxX(self.timeRect) + kInterval;
-  CGFloat sourceY = timeY;
+  CGFloat sourceX   = CGRectGetMaxX(self.timeRect) + kInterval;
+  CGFloat sourceY   = timeY;
   CGSize sourceSize = [dataModel.source sizeWithFont:kSourceFont];
-  self.sourceRect = CGRectMake(sourceX, sourceY, sourceSize.width, sourceSize.height);
+  self.sourceRect   = CGRectMake(sourceX, sourceY, sourceSize.width, sourceSize.height);
   
-  CGFloat textX = self.avataRect.origin.x;
-  CGFloat textY = MAX(CGRectGetMaxY(self.avataRect), CGRectGetMaxY(self.timeRect));
-  CGFloat textW = self.cellWidth - 2 * kInterval;
-  CGSize textSize = [dataModel.text sizeWithFont:kTextFount constrainedToSize:CGSizeMake(textW, MAXFLOAT)];
-  self.textRect = CGRectMake(textX, textY, textSize.width, textSize.height);
+  CGFloat textX     = self.avataRect.origin.x;
+  CGFloat textY     = MAX(CGRectGetMaxY(self.avataRect), CGRectGetMaxY(self.timeRect));
+  CGFloat textW     = self.cellWidth - 2 * kInterval;
+  CGSize textSize   = [dataModel.text sizeWithFont:kTextFount constrainedToSize:CGSizeMake(textW, MAXFLOAT)];
+  self.textRect     = CGRectMake(textX, textY, textSize.width, textSize.height);
   
   if (dataModel.picUrls.count)
   {
-    CGFloat imageX = kInterval;
-    CGFloat imageY = CGRectGetMaxY(self.textRect) + kInterval;
+    CGFloat imageX   = kInterval;
+    CGFloat imageY   = CGRectGetMaxY(self.textRect) + kInterval;
     CGSize imageSize = [WDImageListView sizeOfViewWithImageCount:dataModel.picUrls.count];
-    _image = CGRectMake(imageX, imageY, imageSize.width, imageSize.height);
-    self.cellHeight = CGRectGetMaxY(_image) + kInterval + kCellMargins;
+    _image           = CGRectMake(imageX, imageY, imageSize.width, imageSize.height);
+    self.cellHeight  = CGRectGetMaxY(_image) + kInterval + kCellMargins;
   }
-  else if(dataModel.retweetedStatus)
+  else if(dataModel.retweetedStatus)//有转发微博
   {
     CGFloat retweetX = kInterval;
     CGFloat retweetY = CGRectGetMaxY(self.textRect) + kInterval;
     CGFloat retweetW = self.cellWidth - 2 * kInterval;
     
-    CGFloat reScreenNameX = kInterval;
-    CGFloat reScreenNameY = kInterval;
+    CGFloat reScreenNameX   = kInterval;
+    CGFloat reScreenNameY   = kInterval;
     CGSize reScreenNameSize = [[NSString stringWithFormat:@"@%@", dataModel.retweetedStatus.user.screenName] sizeWithFont:kReScreenNameFont];
-    _reScreenName = CGRectMake(reScreenNameX, reScreenNameY, reScreenNameSize.width, reScreenNameSize.height);
+    _reScreenName           = CGRectMake(reScreenNameX, reScreenNameY, reScreenNameSize.width, reScreenNameSize.height);
     
     CGFloat reTextX = reScreenNameX;
     CGFloat reTextY = CGRectGetMaxY(_reScreenName) + kInterval;
@@ -73,17 +73,13 @@
       // 转发体有配图转发体尺寸
       CGFloat retweetH = CGRectGetMaxY(_reImage) + kInterval;
       _retweet = CGRectMake(retweetX, retweetY, retweetW, retweetH);
-      
     }
     else
-    {                                            // 第二种情况：2、转发的微博不带图
-      
+    {
       // 转发体无配图转发体尺寸
       CGFloat retweetH = CGRectGetMaxY(_retext) + kInterval;
       _retweet = CGRectMake(retweetX, retweetY, retweetW, retweetH);
     }
-    
-    // 有转发体的单元格高度
     self.cellHeight = CGRectGetMaxY(_retweet) + kInterval + kCellMargins;
   }
   else

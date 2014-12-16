@@ -24,6 +24,8 @@
   {
     _statusDock = [[WDStatusDock alloc] init];
     [self.contentView addSubview:_statusDock];
+    
+//    self.backgroundColor = [UIColor redColor];
   }
   return self;
 }

@@ -11,6 +11,7 @@
 #import "WDHttpTool.h"
 #import "WDAccountTool.h"
 #import "WDAccount.h"
+#import "MainController.h"
 
 @interface WDOAuthController ()<UIWebViewDelegate>
 {
@@ -71,7 +72,7 @@
                                  MyLog(@"登陆成功");
                                  
                                  [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                                 self.view.window.rootViewController = 
+                                 self.view.window.rootViewController = [[MainController alloc] init];
                                }
                               failure:^(NSError *error) {
                                 MyLog(@"认证失败....----%@", [error localizedDescription]);

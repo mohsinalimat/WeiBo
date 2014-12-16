@@ -26,34 +26,34 @@
     
     [self addSubView];
     [self addDockItem];
-  [self clickWithDockButtonIndex:0];
+    [self clickWithDockButtonIndex:0];
 }
 
 - (void)addSubView
 {
-    WDHomeController *homeControl = [[WDHomeController alloc] init];
+    WDHomeController *homeControl   = [[WDHomeController alloc] init];
     WDNavigationController *homeNav = [[WDNavigationController alloc] initWithRootViewController:homeControl];
-    homeNav.delegate = self;
+    homeNav.delegate                = self;
     [self addChildViewController:homeNav];
     
     WDMessageController *messageControl = [[WDMessageController alloc] init];
-    WDNavigationController *messageNav = [[WDNavigationController alloc] initWithRootViewController:messageControl];
-    messageNav.delegate = self;
+    WDNavigationController *messageNav  = [[WDNavigationController alloc] initWithRootViewController:messageControl];
+    messageNav.delegate                 = self;
     [self addChildViewController:messageNav];
     
-    WDAddController *addControl = [[WDAddController alloc] init];
-    WDNavigationController *addNav = [[WDNavigationController alloc] initWithRootViewController:addControl];
-    addNav.delegate = self;
+    WDAddController *addControl     = [[WDAddController alloc] init];
+    WDNavigationController *addNav  = [[WDNavigationController alloc] initWithRootViewController:addControl];
+    addNav.delegate                 = self;
     [self addChildViewController:addNav];
     
     WDDiscoverController *discoverControl = [[WDDiscoverController alloc] init];
-    WDNavigationController *discoverNav = [[WDNavigationController alloc] initWithRootViewController:discoverControl];
-    discoverNav.delegate = self;
+    WDNavigationController *discoverNav   = [[WDNavigationController alloc] initWithRootViewController:discoverControl];
+    discoverNav.delegate                  = self;
     [self addChildViewController:discoverNav];
     
     WDProfileController *profileControl = [[WDProfileController alloc] init];
-    WDNavigationController *profileNav = [[WDNavigationController alloc] initWithRootViewController:profileControl];
-    profileNav.delegate = self;
+    WDNavigationController *profileNav  = [[WDNavigationController alloc] initWithRootViewController:profileControl];
+    profileNav.delegate                 = self;
     [self addChildViewController:profileNav];
 }
 
@@ -80,10 +80,10 @@
   UIViewController *rootViewController = [navigationController.viewControllers firstObject];
   if (viewController != rootViewController)
   {
-    CGRect naConViewFrame = navigationController.view.frame;
-    CGFloat naConY = navigationController.navigationBar.frame.origin.y;
-    CGFloat appHeight = [UIScreen mainScreen].applicationFrame.size.height;
-    naConViewFrame.size.height = appHeight + naConY;
+    CGRect naConViewFrame           = navigationController.view.frame;
+    CGFloat naConY                  = navigationController.navigationBar.frame.origin.y;
+    CGFloat appHeight               = [UIScreen mainScreen].applicationFrame.size.height;
+    naConViewFrame.size.height      = appHeight + naConY;
     navigationController.view.frame = naConViewFrame;
   }
 }

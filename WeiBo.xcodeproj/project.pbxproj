@@ -29,6 +29,8 @@
 		9A26825F1A3AD68800596BEB /* WDImageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A26825E1A3AD68800596BEB /* WDImageListView.m */; };
 		9A2682621A3AD7A200596BEB /* WDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2682611A3AD7A200596BEB /* WDImageView.m */; };
 		9A2682661A3AE96100596BEB /* WDHomeStatusCellFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2682651A3AE96000596BEB /* WDHomeStatusCellFrame.m */; };
+		9A46A6941A40069600BA9A41 /* WDNickNameButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A46A6931A40069600BA9A41 /* WDNickNameButton.m */; };
+		9A46A6971A40229500BA9A41 /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A46A6961A40229500BA9A41 /* DXPopover.m */; };
 		9A4ACEB91A381DB200658001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEB81A381DB200658001 /* main.m */; };
 		9A4ACEBC1A381DB200658001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4ACEBB1A381DB200658001 /* AppDelegate.m */; };
 		9A4ACEC41A381DB200658001 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4ACEC31A381DB200658001 /* Images.xcassets */; };
@@ -107,6 +109,10 @@
 		9A2682611A3AD7A200596BEB /* WDImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDImageView.m; sourceTree = "<group>"; };
 		9A2682641A3AE96000596BEB /* WDHomeStatusCellFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDHomeStatusCellFrame.h; sourceTree = "<group>"; };
 		9A2682651A3AE96000596BEB /* WDHomeStatusCellFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHomeStatusCellFrame.m; sourceTree = "<group>"; };
+		9A46A6921A40069600BA9A41 /* WDNickNameButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDNickNameButton.h; sourceTree = "<group>"; };
+		9A46A6931A40069600BA9A41 /* WDNickNameButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNickNameButton.m; sourceTree = "<group>"; };
+		9A46A6951A40229500BA9A41 /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPopover.h; sourceTree = "<group>"; };
+		9A46A6961A40229500BA9A41 /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPopover.m; sourceTree = "<group>"; };
 		9A4ACEB31A381DB200658001 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4ACEB71A381DB200658001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4ACEB81A381DB200658001 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -218,6 +224,8 @@
 		9A1B51BD1A3967B4005D75D8 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				9A46A6951A40229500BA9A41 /* DXPopover.h */,
+				9A46A6961A40229500BA9A41 /* DXPopover.m */,
 				9A1B51BE1A3967B4005D75D8 /* MJRefresh */,
 			);
 			path = lib;
@@ -289,6 +297,8 @@
 				9A1B510B1A3E83AB00D88D43 /* WDBaseDock.m */,
 				9A1B510D1A3E890300D88D43 /* WDStatusDock.h */,
 				9A1B510E1A3E890300D88D43 /* WDStatusDock.m */,
+				9A46A6921A40069600BA9A41 /* WDNickNameButton.h */,
+				9A46A6931A40069600BA9A41 /* WDNickNameButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -519,7 +529,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A1B51121A3EC4D500D88D43 /* WDBaseTextCell.m in Sources */,
+				9A46A6971A40229500BA9A41 /* DXPopover.m in Sources */,
 				9A4ACEBC1A381DB200658001 /* AppDelegate.m in Sources */,
+				9A46A6941A40069600BA9A41 /* WDNickNameButton.m in Sources */,
 				9A1B51BA1A395470005D75D8 /* UIBarButtonItem+WD.m in Sources */,
 				9A4ACEDE1A381E1800658001 /* WDHomeController.m in Sources */,
 				9A26825C1A3ACA9700596BEB /* WDBaseStatusCellFrame.m in Sources */,
