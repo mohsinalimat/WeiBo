@@ -15,11 +15,13 @@
 #import "WDHomeStatusCell.h"
 #import "WDNickNameButton.h"
 #import "WDStatusDetailController.h"
+#import "DXPopover.h"
 
 @interface WDHomeController ()<MJRefreshBaseViewDelegate>
 {
   MJRefreshBaseView *_head;
   NSMutableArray    *_statusFrameArray;
+  DXPopover         *_popover;
 }
 
 @end
