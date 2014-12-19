@@ -7,13 +7,29 @@
 //
 
 #import "WDStatusDetailController.h"
+#import "WDBaseTabBarController.h"
 
 @implementation WDStatusDetailController
 
-- (void)viewWillAppear:(BOOL)animated
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//  [super viewWillAppear:animated];
+//  self.view.backgroundColor = [UIColor whiteColor];
+//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.tabBarController;
+//  [baseTabVC hideDock:YES];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//  [super viewWillDisappear:animated];
+//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.tabBarController;
+//  [baseTabVC hideDock:NO];
+//}
+
+- (void)viewDidLoad
 {
-  [super viewWillAppear:animated];
-  self.view.backgroundColor = [UIColor whiteColor];
+  [super viewDidLoad];
+  self.view.backgroundColor = [UIColor redColor];
 }
 
 @end

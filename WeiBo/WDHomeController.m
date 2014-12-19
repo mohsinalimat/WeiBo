@@ -15,14 +15,20 @@
 #import "WDHomeStatusCell.h"
 #import "WDNickNameButton.h"
 #import "WDStatusDetailController.h"
-#import "DXPopover.h"
+#import "SGPopSelectView.h"
+#import "WDPopBackgroundView.h"
+#import "WDPopViewController.h"
+#import "WDBaseTabBarController.h"
 
-@interface WDHomeController ()<MJRefreshBaseViewDelegate>
+@interface WDHomeController ()<MJRefreshBaseViewDelegate, UIGestureRecognizerDelegate,
+                               UITableViewDataSource, UITableViewDelegate>
 {
   MJRefreshBaseView *_head;
   NSMutableArray    *_statusFrameArray;
-  DXPopover         *_popover;
+  SGPopSelectView   *_popView;
 }
+
+@property(nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -44,10 +50,45 @@
   return self;
 }
 
+- (UITableView *)tableView
+{
+  if (!_tableView)
+  {
+    _tableView = [[UITableView alloc] init];
+  }
+  return _tableView;
+}
+
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//  [super viewWillDisappear:animated];
+//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
+//  [baseTabVC hideDock:YES];
+//}
+//
+////- (void)viewDidAppear:(BOOL)animated
+////{
+////  [super viewDidAppear:animated];
+////  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
+////  [baseTabVC hideDock:NO];
+////}
+//
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//  [super viewWillAppear:animated];
+//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
+//  [baseTabVC hideDock:NO];
+//}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
+  [self.view addSubview:self.tableView];
+  CGSize viewSize = self.view.bounds.size;
+  _tableView.delegate = self;
+  _tableView.dataSource = self;
+  _tableView.frame = CGRectMake(0, 0, viewSize.width, viewSize.height - self.navigationController.navigationBar.frame.size.height);
   self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
   _statusFrameArray = [[NSMutableArray alloc] init];
   
@@ -56,15 +97,6 @@
   
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImageName:@"navigationbar_friendsearch" highLightImageName:@"navigationbar_friendsearch_highlighted" addTarget:self action:@selector(leftButtonClick) forContolEvents:UIControlEventTouchUpInside];
   self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" highLightImageName:@"navigationbar_pop_highlighted" addTarget:self action:@selector(rightButtonClick)];
-  
-  WDNickNameButton *nickNameBtn = [[WDNickNameButton alloc] initWithNickName:@"autorelease"];
-  [nickNameBtn addTarget:self action:@selector(middleButtonClick) forControlEvents:UIControlEventTouchUpInside];
-  self.navigationItem.titleView = nickNameBtn;
-}
-
-- (void)middleButtonClick
-{
-  
 }
 
 - (void)rightButtonClick
@@ -74,7 +106,7 @@
 
 - (void)leftButtonClick
 {
-  
+  [self.navigationController pushViewController:[[WDStatusDetailController alloc] init] animated:YES];
 }
 
 - (void)refresh
@@ -156,7 +188,7 @@
     msgButton.frame = CGRectMake(0, y, self.view.frame.size.width, height);
     msgButton.alpha = 1.0;
     
-    [UIView animateWithDuration:0.5
+    [UIView animateWithDuration:1
                      animations:^{
                        
                        msgButton.alpha = 0.9;
@@ -165,8 +197,13 @@
                      }
                      completion:^(BOOL finished) {
                        
-                       [msgButton removeFromSuperview];
-                       
+//                       [msgButton removeFromSuperview];
+
+                       [UIView animateWithDuration:0.5
+                                        animations:^{}
+                                        completion:^(BOOL finished) {
+                                          [msgButton removeFromSuperview];
+                                        }];
                      }];
   }
 }

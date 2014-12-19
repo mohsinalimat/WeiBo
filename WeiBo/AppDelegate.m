@@ -15,6 +15,7 @@
 #import "WDDiscoverController.h"
 #import "WDProfileController.h"
 #import "MainController.h"
+#import "WDBaseTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -25,41 +26,33 @@
 - (void)mainWindow
 {
     WDHomeController *homeVC = [[WDHomeController alloc] init];
-    homeVC.title = @"首页";
-    homeVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_home"];
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
 
     WDMessageController *messageVC = [[WDMessageController alloc] init];
-    messageVC.title = @"消息";
-    messageVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_message_center"];
     UINavigationController *messageNav = [[UINavigationController alloc] initWithRootViewController:messageVC];
 
     WDAddController *addVC = [[WDAddController alloc] init];
-    addVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_compose_button"];
     UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addVC];
 
     WDDiscoverController *discoverVC = [[WDDiscoverController alloc] init];
-    discoverVC.title = @"发现";
-    discoverVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_discover"];
     UINavigationController *discoverNav = [[UINavigationController alloc] initWithRootViewController:discoverVC];
 
     WDProfileController *profileVC = [[WDProfileController alloc] init];
-    profileVC.title = @"我";
-    profileVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_profile"];
     UINavigationController *profileNav = [[UINavigationController alloc] initWithRootViewController:profileVC];
 
-    UITabBarController *tarBarVC = [[UITabBarController alloc] init];
+    WDBaseTabBarController *tarBarVC = [[WDBaseTabBarController alloc] init];
     [tarBarVC setViewControllers:@[homeNav, messageNav, addNav, discoverNav, profileNav]];
-
+  
     self.window.rootViewController = tarBarVC;
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   if ([WDAccountTool sharedAccountTool].account)
   {
-    self.window.rootViewController = [[MainController alloc] init];
+//    self.window.rootViewController = [[MainController alloc] init];
+    [self mainWindow];
   }
   else
   {

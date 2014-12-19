@@ -13,7 +13,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-  if (self = [super initWithFrame:frame]) {
+  if (self = [super initWithFrame:frame])
+  {
     CGFloat dockWidth = [UIScreen mainScreen].bounds.size.width ;
     self.frame = CGRectMake(0, kCellDefaultHeight - kStatusDockHeight, dockWidth, kStatusDockHeight);
     self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;

@@ -14,6 +14,7 @@
 {
   UIImageView *_addImage;
 }
+
 @property(nonatomic, assign) DockItemType type;
 
 @end
@@ -33,11 +34,8 @@
   
   [self setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
   [self setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
-  // 2、文字居中
   self.titleLabel.textAlignment = NSTextAlignmentCenter;
-  
-  // 3、文字大小
-  self.titleLabel.font = [UIFont systemFontOfSize:12];
+  self.titleLabel.font          = [UIFont systemFontOfSize:12];
 }
 
 - (instancetype)initWithType:(DockItemType)type
@@ -63,7 +61,7 @@
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
-  CGFloat imageWidth = contentRect.size.width;
+  CGFloat imageWidth  = contentRect.size.width;
   CGFloat imageHeight = contentRect.size.height * kPercentage;
   if (_type == DockItemTypeNoTitle)
   {
@@ -76,7 +74,7 @@
 - (CGRect)titleRectForContentRect:(CGRect)contentRect
 {
     CGFloat titleY = contentRect.size.height * kPercentage;
-    CGFloat width = contentRect.size.width;
+    CGFloat width  = contentRect.size.width;
     CGFloat height = contentRect.size.height * (1 - kPercentage);
     return CGRectMake(0, titleY, width, height);
 }

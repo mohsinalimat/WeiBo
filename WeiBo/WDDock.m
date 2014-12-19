@@ -31,6 +31,7 @@
     {
       item = [[WDDockItem alloc] init];
     }
+  
     [self addSubview:item];
     
     [item setTitle:title forState:UIControlStateNormal];
@@ -61,10 +62,20 @@
         [_delegate dock:self itemSelectFrom:(NSInteger)_item.tag to:(NSInteger)item.tag];
         _indexSelected = item.tag;
     }
-    
+  
+    if(item.tag == 2)
+    {
+      return;
+    }
+  
     _item.selected = NO;
     item.selected  = YES;
     self.item      = item;
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+  return YES;
 }
 
 @end

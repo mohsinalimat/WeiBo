@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDBaseController.h"
 
-@interface WDMessageController : UIViewController
+@interface WDMessageController : WDBaseController
 
 @end

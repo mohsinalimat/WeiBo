@@ -7,13 +7,21 @@
 //
 
 #import "WDMessageController.h"
+#import "WDNickNameButton.h"
 
 @implementation WDMessageController
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor yellowColor];
+  self.view.backgroundColor = [UIColor whiteColor];
+//  self.view.translatesAutoresizingMaskIntoConstraints = NO;
+//  
+//  WDNickNameButton *nickName = [[WDNickNameButton alloc] initWithNickName:@"chenjiang,nihao"];
+//  nickName.translatesAutoresizingMaskIntoConstraints = NO;
+//  [self.view addSubview:nickName];
+//  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:nickName attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0]];
+//  [self.view addConstraint:[NSLayoutConstraint constraintWithItem:nickName attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0]];
 }
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDBaseController.h"
 
-@interface WDDiscoverController : UIViewController
+@interface WDDiscoverController : WDBaseController
 
 @end

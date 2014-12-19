@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDBaseController.h"
 
-@interface WDHomeController : UITableViewController
+@interface WDHomeController : WDBaseController
 
 - (void)refresh;
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WDBaseController.h"
 
-@interface WDProfileController : UIViewController
+@interface WDProfileController : WDBaseController
 
 @end

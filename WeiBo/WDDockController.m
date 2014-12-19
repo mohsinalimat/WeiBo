@@ -8,6 +8,8 @@
 
 #import "WDDockController.h"
 #import "WDMacro.h"
+#import "WDBaseController.h"
+#import "WDAddController.h"
 
 @interface WDDockController ()<WDDockDelegate>
 
@@ -36,10 +38,15 @@
     {
         return;
     }
-    
+  
     UIViewController *oldViewController = self.childViewControllers[sourceIndex];
+    if (toIndex == 2)
+    {
+      [(UINavigationController *)oldViewController pushViewController:[[WDAddController alloc] init] animated:YES];
+      return;
+    }
+  
     [oldViewController.view removeFromSuperview];
-    
     UIViewController *newViewController = self.childViewControllers[toIndex];
     CGFloat width = self.view.frame.size.width;
     CGFloat height = self.view.frame.size.height - dock.frame.size.height;

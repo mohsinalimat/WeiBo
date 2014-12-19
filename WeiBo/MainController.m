@@ -40,12 +40,7 @@
     WDNavigationController *messageNav  = [[WDNavigationController alloc] initWithRootViewController:messageControl];
     messageNav.delegate                 = self;
     [self addChildViewController:messageNav];
-    
-    WDAddController *addControl     = [[WDAddController alloc] init];
-    WDNavigationController *addNav  = [[WDNavigationController alloc] initWithRootViewController:addControl];
-    addNav.delegate                 = self;
-    [self addChildViewController:addNav];
-    
+  
     WDDiscoverController *discoverControl = [[WDDiscoverController alloc] init];
     WDNavigationController *discoverNav   = [[WDNavigationController alloc] initWithRootViewController:discoverControl];
     discoverNav.delegate                  = self;
@@ -80,10 +75,50 @@
   UIViewController *rootViewController = [navigationController.viewControllers firstObject];
   if (viewController != rootViewController)
   {
-    CGRect naConViewFrame           = navigationController.view.frame;
-    CGFloat naConY                  = navigationController.navigationBar.frame.origin.y;
-    CGFloat appHeight               = [UIScreen mainScreen].applicationFrame.size.height;
-    naConViewFrame.size.height      = appHeight + naConY;
+    CGRect naConViewFrame = navigationController.view.frame;
+    CGFloat naConY = navigationController.navigationBar.frame.origin.y;
+    CGFloat appHeight = [UIScreen mainScreen].applicationFrame.size.height;
+    naConViewFrame.size.height = appHeight + naConY;
+    navigationController.view.frame = naConViewFrame;
+    
+    CGRect dockFrame = self.dock.frame;
+    CGFloat navBarHeight = navigationController.navigationBar.frame.size.height;
+    
+    dockFrame.origin.y = appHeight - navBarHeight - dockFrame.size.height;
+    // 3.2 TableView滚动后，View的y值发生变量，因此Dock的Y值也需要一起调整
+    if ([rootViewController.view isKindOfClass:[UIScrollView class]]) {
+      
+      // 3.2.1 计算滚动的长度，y值自加该长度
+      UIScrollView *scrollView = (UIScrollView *)rootViewController.view;
+      CGFloat contentY = scrollView.contentOffset.y;
+      
+      // 3.2.2 ios下透明导航条特性，使得contentOffset自动往下移了64个像素(导航条高度+系统状态栏高度)
+      if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) contentY +=64;
+      dockFrame.origin.y += contentY;
+    }
+    
+    // 4、调整Dock的位置
+    [self.dock removeFromSuperview];
+    self.dock.frame = dockFrame;
+    [rootViewController.view addSubview:self.dock];
+  }
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+  UIViewController *rootViewController = [navigationController.viewControllers firstObject];
+  if (viewController == rootViewController)
+  {
+    [self.dock removeFromSuperview];
+    [self.view addSubview:self.dock];
+    CGRect dockFrame = self.dock.frame;
+    dockFrame.origin.y = self.view.frame.size.height - dockFrame.size.height;
+    self.dock.frame = dockFrame;
+    
+    CGRect naConViewFrame = navigationController.view.frame;
+    CGFloat naConY = navigationController.navigationBar.frame.origin.y;
+    CGFloat appHeight = [UIScreen mainScreen].applicationFrame.size.height;
+    naConViewFrame.size.height = appHeight + naConY - dockFrame.size.height;
     navigationController.view.frame = naConViewFrame;
   }
 }
