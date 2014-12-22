@@ -25,11 +25,17 @@
 
 // SAOAuthController:OAuth认证
 #define kOAuthURL [kBaseURL stringByAppendingString:@"oauth2/authorize"]    // 新浪OAuth认证URL
+
 #define kAppKey             @"660705995"                                    // 开发者帐号AppKey
 #define kAppSecret          @"38d9d1d644844050dbb2703cb6bc6db6"             // 开发者帐号AppSecret
 #define kClient_id          @"660705995"                                    // 新浪OAuth认证ClientID
 #define kRedirect_uri       @"http://www.yusian.com"                        // 新浪OAuth认证回调页面
-//#define kRedirect_uri       @"http://www.baidu.com"
+
+//#define kAppKey             @"2787114612"                                    // 开发者帐号AppKey
+//#define kAppSecret          @"4a6c2395143f6eb0bc88ba8f666fd648"             // 开发者帐号AppSecret
+//#define kClient_id          @"2787114612"                                    // 新浪OAuth认证ClientID
+//#define kRedirect_uri       @"https://itunes.apple.com/cn/genre/ios/id36?mt=8" // 新浪OAuth认证回调页面
+
 #define kBaseURL            @"https://api.weibo.com/"                       // 新浪OAuth认证域名
 
 #define HttpContentTypeText @"text/plain"
