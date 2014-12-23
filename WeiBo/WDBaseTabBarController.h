@@ -13,7 +13,11 @@
 @interface WDBaseTabBarController : UITabBarController
 
 @property(nonatomic, strong) WDDock *dock;
+@property(nonatomic, weak) UINavigationController *selectedNavController;
 
 - (void)hideDock:(BOOL)hide;
+- (void)sendDockToBack;
+- (void)bringDockToFont;
+- (void)sendDockBelowView:(UIView*)view;
 
 @end

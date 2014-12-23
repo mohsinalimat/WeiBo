@@ -9,6 +9,7 @@
 #import "WDBaseTabBarController.h"
 #import "WDDock.h"
 #import "WDMacro.h"
+#import "WDAddController.h"
 
 @interface WDBaseTabBarController()<WDDockDelegate>
 
@@ -22,10 +23,8 @@
   
   self.tabBar.hidden = YES;
   _dock = [[WDDock alloc] initWithFrame:self.tabBar.frame];
-//  _dock = [[WDDock alloc] initWithFrame:self.tabBar.bounds];
   self.view.backgroundColor = [UIColor greenColor];
   [self.view addSubview:_dock];
-//  [self.tabBar addSubview:_dock];
   _dock.delegate = self;
 
   [_dock addItemWithIcon:@"tabbar_home.png" selectedIcon:@"tabbar_home_selected.png" title:@"首页"];
@@ -40,6 +39,22 @@
   _dock.hidden = hide;
 }
 
+- (void)sendDockToBack
+{
+  [self.view sendSubviewToBack:_dock];
+}
+
+- (void)bringDockToFont
+{
+  [self.view bringSubviewToFront:_dock];
+}
+
+- (void)sendDockBelowView:(UIView *)view
+{
+  [_dock removeFromSuperview];
+  [self.view insertSubview:_dock belowSubview:view];
+}
+
 - (void)dock:(WDDock *)dock itemSelectFrom:(NSInteger)sourceIndex to:(NSInteger)toIndex
 {
   if (toIndex < 0 || toIndex >= self.childViewControllers.count)
@@ -47,14 +62,33 @@
     return;
   }
   
+  if(toIndex == 2)
+  {
+    if (_selectedNavController)
+    {
+      WDAddController *addVC = [[WDAddController alloc] init];
+      addVC.navController = _selectedNavController;
+      [_selectedNavController presentViewController:addVC animated:NO completion:nil];
+    }
+    return;
+  }
+  
+  if(sourceIndex > 2)
+  {
+    sourceIndex -= 1;
+  }
+  if (toIndex > 2)
+  {
+    toIndex -= 1;
+  }
   UIViewController *oldViewController = self.childViewControllers[sourceIndex];
   [oldViewController.view removeFromSuperview];
   UIViewController *newViewController = self.childViewControllers[toIndex];
   CGFloat width = self.view.frame.size.width;
   CGFloat height = self.view.frame.size.height - dock.frame.size.height;
   newViewController.view.frame = CGRectMake(0, 0, width, height);
-//  [self.view addSubview:newViewController.view];
-  [self.view insertSubview:newViewController.view aboveSubview:_dock];
+  [self.view insertSubview:newViewController.view belowSubview:_dock];
+  self.selectedNavController = (UINavigationController*)newViewController;
 }
 
 @end

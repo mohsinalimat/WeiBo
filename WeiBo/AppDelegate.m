@@ -31,9 +31,6 @@
     WDMessageController *messageVC = [[WDMessageController alloc] init];
     UINavigationController *messageNav = [[UINavigationController alloc] initWithRootViewController:messageVC];
 
-    WDAddController *addVC = [[WDAddController alloc] init];
-    UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addVC];
-
     WDDiscoverController *discoverVC = [[WDDiscoverController alloc] init];
     UINavigationController *discoverNav = [[UINavigationController alloc] initWithRootViewController:discoverVC];
 
@@ -41,7 +38,9 @@
     UINavigationController *profileNav = [[UINavigationController alloc] initWithRootViewController:profileVC];
 
     WDBaseTabBarController *tarBarVC = [[WDBaseTabBarController alloc] init];
-    [tarBarVC setViewControllers:@[homeNav, messageNav, addNav, discoverNav, profileNav]];
+    [tarBarVC setViewControllers:@[homeNav, messageNav, discoverNav, profileNav]];
+  
+    tarBarVC.selectedNavController = homeNav;
   
     self.window.rootViewController = tarBarVC;
 }
@@ -51,7 +50,6 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   if ([WDAccountTool sharedAccountTool].account)
   {
-//    self.window.rootViewController = [[MainController alloc] init];
     [self mainWindow];
   }
   else

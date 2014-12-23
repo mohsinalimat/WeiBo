@@ -11,4 +11,6 @@
 
 @interface WDAddController : WDBaseController
 
+@property(nonatomic, weak) UINavigationController *navController;
+
 @end

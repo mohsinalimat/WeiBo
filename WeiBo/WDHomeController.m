@@ -59,27 +59,6 @@
   return _tableView;
 }
 
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//  [super viewWillDisappear:animated];
-//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
-//  [baseTabVC hideDock:YES];
-//}
-//
-////- (void)viewDidAppear:(BOOL)animated
-////{
-////  [super viewDidAppear:animated];
-////  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
-////  [baseTabVC hideDock:NO];
-////}
-//
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//  [super viewWillAppear:animated];
-//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
-//  [baseTabVC hideDock:NO];
-//}
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -94,6 +73,8 @@
   
   self.view.backgroundColor = kBGColor;
 //  self.title = @"首页";
+  
+  [self refresh];
   
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImageName:@"navigationbar_friendsearch" highLightImageName:@"navigationbar_friendsearch_highlighted" addTarget:self action:@selector(leftButtonClick) forContolEvents:UIControlEventTouchUpInside];
   self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"navigationbar_pop" highLightImageName:@"navigationbar_pop_highlighted" addTarget:self action:@selector(rightButtonClick)];

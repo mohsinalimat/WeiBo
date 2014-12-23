@@ -10,32 +10,24 @@
 #import "WDAddController.h"
 #import "WDBaseTabBarController.h"
 
+@interface WDBaseController()<UINavigationControllerDelegate>
+
+@end
+
 @implementation WDBaseController
+
+- (instancetype)init
+{
+  if (self = [super init])
+  {
+    self.navigationController.delegate = self;
+  }
+  return self;
+}
 
 - (void)pushAddController
 {
   [self.navigationController pushViewController:[[WDAddController alloc ] init] animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-  [super viewWillDisappear:animated];
-  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
-  [baseTabVC hideDock:YES];
-}
-//
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//  [super viewWillAppear:animated];
-//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
-//  [baseTabVC hideDock:NO];
-//}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-  [super viewWillAppear:animated];
-  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.navigationController.tabBarController;
-  [baseTabVC hideDock:NO];
 }
 
 @end

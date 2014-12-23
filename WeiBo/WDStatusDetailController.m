@@ -8,28 +8,33 @@
 
 #import "WDStatusDetailController.h"
 #import "WDBaseTabBarController.h"
+#import "WDBaseController.h"
+
+@interface WDStatusDetailController()<UINavigationControllerDelegate>
+
+@end
 
 @implementation WDStatusDetailController
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//  [super viewWillAppear:animated];
-//  self.view.backgroundColor = [UIColor whiteColor];
-//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.tabBarController;
-//  [baseTabVC hideDock:YES];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//  [super viewWillDisappear:animated];
-//  WDBaseTabBarController *baseTabVC = (WDBaseTabBarController *)self.tabBarController;
-//  [baseTabVC hideDock:NO];
-//}
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor redColor];
+  self.navigationController.delegate = self;
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+  if ([viewController isKindOfClass:[WDStatusDetailController class]])
+  {
+    WDBaseTabBarController *tabVC = (WDBaseTabBarController*)self.tabBarController;
+    [tabVC sendDockToBack];
+  }
+  else if([viewController isKindOfClass:[WDBaseController class]])
+  {
+    WDBaseTabBarController *tabVC = (WDBaseTabBarController*)self.tabBarController;
+    [tabVC bringDockToFont];
+  }
 }
 
 @end
