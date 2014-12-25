@@ -16,5 +16,6 @@ typedef void (^CHTumblrMenuViewSelectedBlock)(void);
 
 - (void)addMenuItemWithTitle:(NSString*)title andIcon:(UIImage*)icon andSelectedBlock:(CHTumblrMenuViewSelectedBlock)block;
 - (void)show;
+- (void)showInController:(UIViewController*)controller;
 
 @end

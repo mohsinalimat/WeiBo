@@ -10,6 +10,7 @@
 #import "WDDock.h"
 #import "WDMacro.h"
 #import "WDAddController.h"
+#import "WDTumblrMenuView.h"
 
 @interface WDBaseTabBarController()<WDDockDelegate>
 
@@ -55,6 +56,35 @@
   [self.view insertSubview:_dock belowSubview:view];
 }
 
+- (void)showMenu
+{
+    WDTumblrMenuView *menuView = [[WDTumblrMenuView alloc] init];
+    [menuView addMenuItemWithTitle:@"文字" andIcon:[UIImage imageNamed:@"tabbar_compose_idea"] andSelectedBlock:^{
+        NSLog(@"Text selected");
+    }];
+    [menuView addMenuItemWithTitle:@"相册" andIcon:[UIImage imageNamed:@"tabbar_compose_photo"] andSelectedBlock:^{
+        NSLog(@"Photo selected");
+    }];
+    [menuView addMenuItemWithTitle:@"拍摄" andIcon:[UIImage imageNamed:@"tabbar_compose_camera"] andSelectedBlock:^{
+        NSLog(@"Quote selected");
+        
+    }];
+    [menuView addMenuItemWithTitle:@"签到" andIcon:[UIImage imageNamed:@"tabbar_compose_lbs"] andSelectedBlock:^{
+        NSLog(@"Link selected");
+        
+    }];
+    [menuView addMenuItemWithTitle:@"点评" andIcon:[UIImage imageNamed:@"tabbar_compose_review"] andSelectedBlock:^{
+        NSLog(@"Chat selected");
+        
+    }];
+    [menuView addMenuItemWithTitle:@"更多" andIcon:[UIImage imageNamed:@"tabbar_compose_more"] andSelectedBlock:^{
+        NSLog(@"Video selected");
+        
+    }];
+    
+    [menuView show];
+}
+
 - (void)dock:(WDDock *)dock itemSelectFrom:(NSInteger)sourceIndex to:(NSInteger)toIndex
 {
   if (toIndex < 0 || toIndex >= self.childViewControllers.count)
@@ -64,12 +94,7 @@
   
   if(toIndex == 2)
   {
-    if (_selectedNavController)
-    {
-      WDAddController *addVC = [[WDAddController alloc] init];
-      addVC.navController = _selectedNavController;
-      [_selectedNavController presentViewController:addVC animated:NO completion:nil];
-    }
+    [self showMenu];
     return;
   }
   

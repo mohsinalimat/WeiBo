@@ -11,5 +11,6 @@
 @interface WDBaseController : UIViewController
 
 - (void)pushAddController;
+- (void)pushPopMenu;
 
 @end
