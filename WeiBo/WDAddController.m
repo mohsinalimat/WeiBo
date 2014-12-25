@@ -10,6 +10,7 @@
 
 @interface WDAddController()
 
+@property(nonatomic, strong) UIImageView *editImage;
 @property(nonatomic, strong) UIButton *btnBackground;
 @property(nonatomic, strong) UIImageView *addImage;
 
@@ -43,6 +44,11 @@
   CGAffineTransform transform = CGAffineTransformIdentity;
   _addImage.transform = CGAffineTransformRotate(transform, 45.0f * M_PI / 180.0f);
   [UIView commitAnimations];
+  
+//  _editImage  = [UIImageView alloc] initWithImage:
+  CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"position"];
+  [animation1 setDuration:1];
+//  animation1.fromValue = [NSValue valueWithCGPoint:CGPointMake(<#CGFloat x#>, <#CGFloat y#>)]
 }
 
 - (void)dispearClick:(UIButton *)sender
