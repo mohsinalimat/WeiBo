@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "WDBaseController.h"
 
+@interface WDComposeButton : UIControl
+
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage *)icon;
+
+- (CGSize)getIconSize;
+
+@end
+
 @interface WDAddController : WDBaseController
 
 @property(nonatomic, weak) UINavigationController *navController;
