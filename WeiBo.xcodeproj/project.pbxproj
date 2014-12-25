@@ -66,6 +66,7 @@
 		9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AF1A38923300F4CE48 /* WDNavigationController.m */; };
 		9A77A4E41A3B392600EA2035 /* UIImage+WD568h.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */; };
 		9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E61A3B39F600EA2035 /* NSString+WD.m */; };
+		9AA79F5F1A4C495300EFA020 /* WDTumblrMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA79F5E1A4C495300EFA020 /* WDTumblrMenuView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,8 @@
 		9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WD568h.m"; sourceTree = "<group>"; };
 		9A77A4E51A3B39F600EA2035 /* NSString+WD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WD.h"; sourceTree = "<group>"; };
 		9A77A4E61A3B39F600EA2035 /* NSString+WD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WD.m"; sourceTree = "<group>"; };
+		9AA79F5D1A4C495300EFA020 /* WDTumblrMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTumblrMenuView.h; sourceTree = "<group>"; };
+		9AA79F5E1A4C495300EFA020 /* WDTumblrMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTumblrMenuView.m; sourceTree = "<group>"; };
 		AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4820FF58D3E83CB635A3ABB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -341,6 +344,8 @@
 				9A5041A61A388AB700F4CE48 /* WDDockItem.m */,
 				9A5041A21A388AA200F4CE48 /* WDDock.h */,
 				9A5041A31A388AA200F4CE48 /* WDDock.m */,
+				9AA79F5D1A4C495300EFA020 /* WDTumblrMenuView.h */,
+				9AA79F5E1A4C495300EFA020 /* WDTumblrMenuView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				9A4ACEF11A384E7F00658001 /* WDAddController.m in Sources */,
 				9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */,
 				9A3E2D981A4411CD004D6E14 /* WDBaseTabBarController.m in Sources */,
+				9AA79F5F1A4C495300EFA020 /* WDTumblrMenuView.m in Sources */,
 				9A5041A41A388AA200F4CE48 /* WDDock.m in Sources */,
 				9A2682551A3AB62D00596BEB /* WDStatus.m in Sources */,
 				9A3E2D951A43F960004D6E14 /* WDBaseController.m in Sources */,
