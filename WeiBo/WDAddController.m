@@ -77,9 +77,7 @@
         NSLog(@"Video selected");
         
     }];
-    
-    
-    
+  
     [menuView showInController:self];
 }
 

@@ -90,12 +90,14 @@
         _addImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbar_compose_background_icon_add"]];
         [bottomView addSubview:_addImage];
         _addImage.center = CGPointMake(bottomView.bounds.size.width / 2.0f, bottomView.bounds.size.height / 2.0f);
-        
-        [UIView beginAnimations:@"addImageOn" context:nil];
-        [_addImage setAnimationDuration:1.0f];
-        CGAffineTransform transform = CGAffineTransformIdentity;
-        _addImage.transform = CGAffineTransformRotate(transform, 45.0f * M_PI / 180.0f);
-        [UIView commitAnimations];
+ 
+        _addImage.transform = CGAffineTransformRotate(CGAffineTransformIdentity, 45.0f * M_PI / 180.0f);
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.duration = 0.15;
+        animation.repeatCount = 1;
+        animation.fromValue = [NSNumber numberWithFloat:0.0f];
+        animation.toValue = [NSNumber numberWithFloat:45 * M_PI / 180.0f];
+        [_addImage.layer addAnimation:animation forKey:@"rotate-layer"];
     }
     return self;
 }
@@ -266,6 +268,14 @@
         
         [button.layer addAnimation:positionAnimation forKey:@"riseAnimation"];
     }
+  
+  _addImage.transform = CGAffineTransformRotate(CGAffineTransformIdentity, 0.0f);
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+  animation.duration = 0.15f;
+  animation.repeatCount = 1;
+  animation.fromValue = [NSNumber numberWithFloat:45 * M_PI / 180.0f];
+  animation.toValue = [NSNumber numberWithFloat:0.0f];
+  [_addImage.layer addAnimation:animation forKey:@"rotate-layer"];
 }
 
 - (void)animationDidStart:(CAAnimation *)anim
@@ -298,7 +308,6 @@
 
 - (void)show
 {
-    
     UIViewController *appRootViewController;
     UIWindow *window;
     
@@ -312,7 +321,8 @@
         topViewController = topViewController.presentedViewController;
     }
     
-    if ([topViewController.view viewWithTag:CHTumblrMenuViewTag]) {
+    if ([topViewController.view viewWithTag:CHTumblrMenuViewTag])
+    {
         [[topViewController.view viewWithTag:CHTumblrMenuViewTag] removeFromSuperview];
     }
     
