@@ -177,8 +177,6 @@
                        
                      }
                      completion:^(BOOL finished) {
-                       
-//                       [msgButton removeFromSuperview];
 
                        [UIView animateWithDuration:0.5
                                         animations:^{}
