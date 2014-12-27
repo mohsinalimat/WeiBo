@@ -20,7 +20,7 @@
 + (NSArray*)getConfigData
 {
   NSMutableArray *sections = [[NSMutableArray alloc] init];
-  
+  return sections;
 }
 
 - (UITableView *)tableView
