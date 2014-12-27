@@ -14,6 +14,7 @@
 {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor whiteColor];
+  self.title = @"发现";
 }
 
 @end

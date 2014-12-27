@@ -87,7 +87,12 @@
 
 - (void)dock:(WDDock *)dock itemSelectFrom:(NSInteger)sourceIndex to:(NSInteger)toIndex
 {
-  if (toIndex < 0 || toIndex >= self.childViewControllers.count)
+  int tmpToIndex = toIndex;
+  if (toIndex > 2)
+  {
+    --tmpToIndex;
+  }
+  if (toIndex < 0 || tmpToIndex >= self.childViewControllers.count)
   {
     return;
   }

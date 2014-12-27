@@ -15,6 +15,8 @@
 {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor whiteColor];
+  
+  self.title = @"消息";
 //  self.view.translatesAutoresizingMaskIntoConstraints = NO;
 //  
 //  WDNickNameButton *nickName = [[WDNickNameButton alloc] initWithNickName:@"chenjiang,nihao"];

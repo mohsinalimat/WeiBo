@@ -31,7 +31,7 @@
     {
         self.backgroundColor = [UIColor clearColor];
         self.backgroundView = nil;
-        
+      
         [self createSubView];
     }
     return self;

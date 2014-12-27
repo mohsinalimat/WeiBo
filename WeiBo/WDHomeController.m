@@ -19,6 +19,7 @@
 #import "WDPopBackgroundView.h"
 #import "WDPopViewController.h"
 #import "WDBaseTabBarController.h"
+#import "WDStatusViewCell.h"
 
 @interface WDHomeController ()<MJRefreshBaseViewDelegate, UIGestureRecognizerDelegate,
                                UITableViewDataSource, UITableViewDelegate>
@@ -72,7 +73,6 @@
   _statusFrameArray = [[NSMutableArray alloc] init];
   
   self.view.backgroundColor = kBGColor;
-//  self.title = @"首页";
   
   [self refresh];
   
@@ -213,15 +213,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  return [_statusFrameArray[indexPath.row] cellHeight];
+  return [_statusFrameArray[indexPath.row] cellHeight] + kCellMargins * 4;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   WDHomeStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:[WDHomeStatusCell ID]];
+//  WDStatusViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:[WDStatusViewCell ID]];
   if (cell == nil)
   {
     cell = [[WDHomeStatusCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[WDHomeStatusCell ID]];
+//    cell = [[WDStatusViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[WDStatusViewCell ID]];
   }
   
   cell.cellFrame = _statusFrameArray[indexPath.row];

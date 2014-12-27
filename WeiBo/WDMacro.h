@@ -24,6 +24,8 @@
 #define isIPhone5 ([UIScreen mainScreen].bounds.size.height == 568)
 #define SYSTEMVERSION [[UIDevice currentDevice].systemVersion doubleValue] //系统版本号判断
 
+#define COLORRGCA(R, G, B, A) [UIColor colorWithRed:R / 255 green:G / 255 blue:B / 255 alpha:A]
+
 // SAOAuthController:OAuth认证
 #define kOAuthURL [kBaseURL stringByAppendingString:@"oauth2/authorize"]    // 新浪OAuth认证URL
 

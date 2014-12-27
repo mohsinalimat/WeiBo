@@ -16,6 +16,7 @@
 #import "WDProfileController.h"
 #import "MainController.h"
 #import "WDBaseTabBarController.h"
+#import "WDMacro.h"
 
 @interface AppDelegate ()
 
@@ -27,15 +28,18 @@
 {
     WDHomeController *homeVC = [[WDHomeController alloc] init];
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
-
+  
     WDMessageController *messageVC = [[WDMessageController alloc] init];
     UINavigationController *messageNav = [[UINavigationController alloc] initWithRootViewController:messageVC];
+    messageNav.navigationBar.titleTextAttributes = @{UITextAttributeTextColor : [UIColor colorWithRed:82.0f / 255 green:82.0f / 255 blue:82.0f / 255 alpha:1]};
 
     WDDiscoverController *discoverVC = [[WDDiscoverController alloc] init];
     UINavigationController *discoverNav = [[UINavigationController alloc] initWithRootViewController:discoverVC];
+    discoverNav.navigationBar.titleTextAttributes = @{UITextAttributeTextColor : [UIColor colorWithRed:82.0f / 255 green:82.0f / 255 blue:82.0f / 255 alpha:1]};
 
     WDProfileController *profileVC = [[WDProfileController alloc] init];
     UINavigationController *profileNav = [[UINavigationController alloc] initWithRootViewController:profileVC];
+    profileNav.navigationBar.titleTextAttributes = @{UITextAttributeTextColor : COLORRGCA(82.0f, 82.0f, 82.0f, 1)};
 
     WDBaseTabBarController *tarBarVC = [[WDBaseTabBarController alloc] init];
     [tarBarVC setViewControllers:@[homeNav, messageNav, discoverNav, profileNav]];

@@ -65,6 +65,8 @@
 		9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AF1A38923300F4CE48 /* WDNavigationController.m */; };
 		9A77A4E41A3B392600EA2035 /* UIImage+WD568h.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */; };
 		9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E61A3B39F600EA2035 /* NSString+WD.m */; };
+		9A7922EB1A4EDC9700985A99 /* WDStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7922EA1A4EDC9700985A99 /* WDStatusViewCell.m */; };
+		9A7922EE1A4EF92D00985A99 /* profiledata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A7922ED1A4EF92D00985A99 /* profiledata.plist */; };
 		9AA79F5F1A4C495300EFA020 /* WDTumblrMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA79F5E1A4C495300EFA020 /* WDTumblrMenuView.m */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +180,9 @@
 		9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WD568h.m"; sourceTree = "<group>"; };
 		9A77A4E51A3B39F600EA2035 /* NSString+WD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WD.h"; sourceTree = "<group>"; };
 		9A77A4E61A3B39F600EA2035 /* NSString+WD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WD.m"; sourceTree = "<group>"; };
+		9A7922E91A4EDC9700985A99 /* WDStatusViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStatusViewCell.h; sourceTree = "<group>"; };
+		9A7922EA1A4EDC9700985A99 /* WDStatusViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStatusViewCell.m; sourceTree = "<group>"; };
+		9A7922ED1A4EF92D00985A99 /* profiledata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = profiledata.plist; sourceTree = "<group>"; };
 		9AA79F5D1A4C495300EFA020 /* WDTumblrMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDTumblrMenuView.h; sourceTree = "<group>"; };
 		9AA79F5E1A4C495300EFA020 /* WDTumblrMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDTumblrMenuView.m; sourceTree = "<group>"; };
 		AA5AB392961934D448C7F39B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +332,8 @@
 				9A5041A31A388AA200F4CE48 /* WDDock.m */,
 				9AA79F5D1A4C495300EFA020 /* WDTumblrMenuView.h */,
 				9AA79F5E1A4C495300EFA020 /* WDTumblrMenuView.m */,
+				9A7922E91A4EDC9700985A99 /* WDStatusViewCell.h */,
+				9A7922EA1A4EDC9700985A99 /* WDStatusViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -388,6 +395,7 @@
 		9A4ACEB61A381DB200658001 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A7922EC1A4EF90C00985A99 /* data */,
 				9A3DD4A01A481C3E007798B5 /* Default-568h@2x.png */,
 				9A3DD4A11A481C3E007798B5 /* Default-667h@2x.png */,
 				9A3DD4A21A481C3E007798B5 /* Default-736h_left@3x.png */,
@@ -416,6 +424,14 @@
 				9A4ACED11A381DB200658001 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A7922EC1A4EF90C00985A99 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				9A7922ED1A4EF92D00985A99 /* profiledata.plist */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		E6CA8CDD06B4A7247ED16BF0 /* Pods */ = {
@@ -500,6 +516,7 @@
 				9A3DD4AC1A481C3E007798B5 /* Default@2x.png in Resources */,
 				9A3DD4A81A481C3E007798B5 /* Default-667h@2x.png in Resources */,
 				9A4ACEC41A381DB200658001 /* Images.xcassets in Resources */,
+				9A7922EE1A4EF92D00985A99 /* profiledata.plist in Resources */,
 				9A1B51C91A3967B4005D75D8 /* MJRefresh.bundle in Resources */,
 				9A3DD4AB1A481C3E007798B5 /* Default-736h@3x.png in Resources */,
 				9A3DD4A71A481C3E007798B5 /* Default-568h@2x.png in Resources */,
@@ -571,6 +588,7 @@
 				9A4ACEE11A38252100658001 /* WDOAuthController.m in Sources */,
 				9A1B51CD1A3967B4005D75D8 /* MJRefreshHeaderView.m in Sources */,
 				9A5041AA1A388AD200F4CE48 /* WDDockController.m in Sources */,
+				9A7922EB1A4EDC9700985A99 /* WDStatusViewCell.m in Sources */,
 				9A26824B1A3A930E00596BEB /* WDUser.m in Sources */,
 				9A4ACEE51A383D2100658001 /* WDAccount.m in Sources */,
 				9A3CAE0F1A41B94E00A80419 /* WDBaseStatusCell.m in Sources */,
