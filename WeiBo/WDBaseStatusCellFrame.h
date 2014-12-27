@@ -11,10 +11,10 @@
 
 @interface WDBaseStatusCellFrame : WDBaseTextCellFrame
 
-@property(nonatomic, readonly) CGRect image;
-@property(nonatomic, readonly) CGRect retweet;
-@property(nonatomic, readonly) CGRect retext;
-@property(nonatomic, readonly) CGRect reScreenName;
-@property(nonatomic, readonly) CGRect reImage;
+@property(nonatomic, assign) CGRect image;
+@property(nonatomic, assign) CGRect retweet;
+@property(nonatomic, assign) CGRect retext;
+@property(nonatomic, assign) CGRect reScreenName;
+@property(nonatomic, assign) CGRect reImage;
 
 @end

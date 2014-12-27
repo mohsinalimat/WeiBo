@@ -23,10 +23,12 @@
                                  path:@"2/statuses/home_timeline.json"
                                params:param
                                sucess:^(id JSON) {
+                                 
                                  if (sucess == nil)
                                  {
                                    return ;
                                  }
+                                 
                                  NSMutableArray *statuses = [NSMutableArray array];
                                  for(NSDictionary *dict in [JSON valueForKey:@"statuses"])
                                  {

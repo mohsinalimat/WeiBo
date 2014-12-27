@@ -24,8 +24,6 @@
   {
     _statusDock = [[WDStatusDock alloc] init];
     [self.contentView addSubview:_statusDock];
-    
-//    self.backgroundColor = [UIColor redColor];
   }
   return self;
 }
@@ -34,11 +32,6 @@
 {
   [super setCellFrame:cellFrame];
   _statusDock.status = cellFrame.dataModel;
-}
-
-- (void)setFrame:(CGRect)frame
-{
-  [super setFrame:frame];
 }
 
 + (NSString *)ID

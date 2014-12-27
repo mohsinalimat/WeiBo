@@ -33,7 +33,7 @@
   CGFloat avataX    = kInterval;
   CGFloat avataY    = kInterval;
   CGSize avataSize  = [WDAvata sizeOfAvataType:_avataType];
-  _avataRect        = CGRectMake(avataX, avataY, avataSize.width, avataSize.height);
+  _avataRect = (CGRect){avataX, avataY, avataSize};
   
   CGFloat screenNameX   = CGRectGetMaxX(_avataRect) + kInterval;
   CGFloat screenNameY   = avataY;

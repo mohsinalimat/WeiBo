@@ -54,7 +54,7 @@
 {
   if (!_tableView)
   {
-    _tableView = [[UITableView alloc] init];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
   }
   return _tableView;
 }
@@ -115,10 +115,9 @@
   [WDStatusTool statusToolGetStatusWithSinceID:firstStatusID
                                          maxID:0
                                         Sucess:^(NSArray *array) {
+                                            
                                           NSArray *newFrame = [self statusFrameFromStatusArray:array];
-                                          [_statusFrameArray removeAllObjects];
-                                          [_statusFrameArray addObjectsFromArray:newFrame];
-//                                          [_statusFrameArray insertObjects:newFrame atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newFrame.count)]];
+                                          [_statusFrameArray insertObjects:newFrame atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, newFrame.count)]];
                                           [self.tableView reloadData];
                                           [refreshView endRefreshing];
                                           
@@ -139,10 +138,7 @@
                                         Sucess:^(NSArray *array) {
                                           
                                           NSArray *newFrame = [self statusFrameFromStatusArray:array];
-                                          for(WDHomeStatusCellFrame *obj in newFrame)
-                                          {
-                                            [_statusFrameArray addObject:obj];
-                                          }
+                                          [_statusFrameArray addObjectsFromArray:newFrame];
                                           [self.tableView reloadData];
                                           [refreshView endRefreshing];
                                         }
@@ -178,11 +174,17 @@
                      }
                      completion:^(BOOL finished) {
 
-                       [UIView animateWithDuration:0.5
-                                        animations:^{}
+                       [UIView animateWithDuration:1.0
+                                             delay:1.5
+                                           options:UIViewAnimationOptionCurveEaseOut
+                                        animations:^{
+                                          msgButton.transform = CGAffineTransformTranslate(msgButton.transform, 0, -height);
+                                          msgButton.alpha = 0;
+                                        }
                                         completion:^(BOOL finished) {
                                           [msgButton removeFromSuperview];
                                         }];
+                       
                      }];
   }
 }

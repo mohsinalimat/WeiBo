@@ -82,7 +82,7 @@
       _image.hidden    = NO;
       _image.imageList = status.picUrls;
     
-      _retweet.hidden  = NO;
+      _retweet.hidden  = YES;
   }
   else if(status.retweetedStatus)
   {
@@ -118,8 +118,10 @@
 
 - (void)setFrame:(CGRect)frame
 {
-  frame.origin.y    += kCellMargins * 2;
-  frame.size.height -= kCellMargins * 2;
+  frame.origin.x += kCellMargins;
+  frame.size.width -= (2 *kCellMargins);
+  frame.origin.y += kCellMargins;
+  frame.size.height -= kCellMargins;
   
   [super setFrame:frame];
 }
