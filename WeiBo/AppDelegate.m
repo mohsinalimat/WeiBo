@@ -20,6 +20,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) NSString *strname;
+
 @end
 
 @implementation AppDelegate
