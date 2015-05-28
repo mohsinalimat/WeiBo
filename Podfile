@@ -6,3 +6,6 @@ pod 'DACircularProgress', '~> 2.2.0'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'PSTCollectionView', '~> 1.2.1'
 pod 'HPGrowingTextView' , '~> 1.1'
+pod 'pop', '~> 1.0'
+
+
