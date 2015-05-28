@@ -63,6 +63,8 @@
 		9A5041AA1A388AD200F4CE48 /* WDDockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041A91A388AD200F4CE48 /* WDDockController.m */; };
 		9A5041AD1A388ADF00F4CE48 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AC1A388ADF00F4CE48 /* MainController.m */; };
 		9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5041AF1A38923300F4CE48 /* WDNavigationController.m */; };
+		9A7570E91B17158D00AA5AAB /* WDAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7570E71B17158D00AA5AAB /* WDAnimationController.m */; };
+		9A7570EA1B17158D00AA5AAB /* WDAnimationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7570E81B17158D00AA5AAB /* WDAnimationController.xib */; };
 		9A77A4E41A3B392600EA2035 /* UIImage+WD568h.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */; };
 		9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A77A4E61A3B39F600EA2035 /* NSString+WD.m */; };
 		9A7922EB1A4EDC9700985A99 /* WDStatusViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7922EA1A4EDC9700985A99 /* WDStatusViewCell.m */; };
@@ -176,6 +178,9 @@
 		9A5041AC1A388ADF00F4CE48 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		9A5041AE1A38923300F4CE48 /* WDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDNavigationController.h; sourceTree = "<group>"; };
 		9A5041AF1A38923300F4CE48 /* WDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNavigationController.m; sourceTree = "<group>"; };
+		9A7570E61B17158D00AA5AAB /* WDAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAnimationController.h; sourceTree = "<group>"; };
+		9A7570E71B17158D00AA5AAB /* WDAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAnimationController.m; sourceTree = "<group>"; };
+		9A7570E81B17158D00AA5AAB /* WDAnimationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDAnimationController.xib; sourceTree = "<group>"; };
 		9A77A4E21A3B392600EA2035 /* UIImage+WD568h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WD568h.h"; sourceTree = "<group>"; };
 		9A77A4E31A3B392600EA2035 /* UIImage+WD568h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WD568h.m"; sourceTree = "<group>"; };
 		9A77A4E51A3B39F600EA2035 /* NSString+WD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WD.h"; sourceTree = "<group>"; };
@@ -241,6 +246,9 @@
 				9A3E2D941A43F960004D6E14 /* WDBaseController.m */,
 				9A3E2D961A4411CD004D6E14 /* WDBaseTabBarController.h */,
 				9A3E2D971A4411CD004D6E14 /* WDBaseTabBarController.m */,
+				9A7570E61B17158D00AA5AAB /* WDAnimationController.h */,
+				9A7570E71B17158D00AA5AAB /* WDAnimationController.m */,
+				9A7570E81B17158D00AA5AAB /* WDAnimationController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -519,6 +527,7 @@
 				9A7922EE1A4EF92D00985A99 /* profiledata.plist in Resources */,
 				9A1B51C91A3967B4005D75D8 /* MJRefresh.bundle in Resources */,
 				9A3DD4AB1A481C3E007798B5 /* Default-736h@3x.png in Resources */,
+				9A7570EA1B17158D00AA5AAB /* WDAnimationController.xib in Resources */,
 				9A3DD4A71A481C3E007798B5 /* Default-568h@2x.png in Resources */,
 				9A3DD4AA1A481C3E007798B5 /* Default-736h_right@3x.png in Resources */,
 				9A3CAE201A41B97A00A80419 /* sg_pop_images.xcassets in Resources */,
@@ -573,6 +582,7 @@
 				9A1B51CB1A3967B4005D75D8 /* MJRefreshConst.m in Sources */,
 				9A5041B01A38923300F4CE48 /* WDNavigationController.m in Sources */,
 				9A4ACEF11A384E7F00658001 /* WDAddController.m in Sources */,
+				9A7570E91B17158D00AA5AAB /* WDAnimationController.m in Sources */,
 				9A77A4E71A3B39F600EA2035 /* NSString+WD.m in Sources */,
 				9A3E2D981A4411CD004D6E14 /* WDBaseTabBarController.m in Sources */,
 				9AA79F5F1A4C495300EFA020 /* WDTumblrMenuView.m in Sources */,
